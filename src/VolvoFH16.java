@@ -2,12 +2,11 @@ import java.awt.*;
 
 /**
  * @author SM
- * Subclass of Truck. Represents a truck of model VolvoFH16
+ * Subclass of Transporter. Represents a transporter of model VolvoFH16
  */
 public class VolvoFH16 extends Transporter implements IHoldTransportable {
 
     private final int maxLoad = 5;
-
 
     /**
      * Constructor for VolvoFH16 class

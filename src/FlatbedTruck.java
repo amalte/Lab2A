@@ -2,7 +2,7 @@ import java.awt.*;
 
 /**
  * @author SM
- * Subclass of Car. Represents a Truck object
+ * Subclass of MotorizedVehicle. Represents a FlatbedTruck object
  */
 public abstract class FlatbedTruck extends MotorizedVehicle {
 

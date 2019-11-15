@@ -2,6 +2,10 @@ import java.awt.*;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * @author SM
+ * Subclass of MotorizedVehicle. Represents a transporter object
+ */
 public abstract class Transporter extends MotorizedVehicle implements IHoldTransportable {
 
     private boolean rampOpen = false;
@@ -43,7 +47,7 @@ public abstract class Transporter extends MotorizedVehicle implements IHoldTrans
     public void loadCar(Car car) {
         if(isCarLoadable(car)) {
             loadedCars.push(car);
-            
+
         }
     }
 
@@ -52,6 +56,13 @@ public abstract class Transporter extends MotorizedVehicle implements IHoldTrans
             Car car = loadedCars.pop();
             car.setX(x + 3);
             car.setY(y + 3);
+        }
+    }
+
+    public void updateLoadedCarsPosition() {
+        for(Car c : loadedCars) {
+            c.setX(x);
+            c.setY(y);
         }
     }
 
@@ -80,7 +91,7 @@ public abstract class Transporter extends MotorizedVehicle implements IHoldTrans
     }
 
     private boolean isCarLoadable(Car car) {
-        return isRampOpen() && (Math.abs(x - car.getX()) < 3 && Math.abs(y - car.getY()) < 3);
+        return isRampOpen() && loadedCars.size() < maxLoad && (Math.abs(x - car.getX()) < 3 && Math.abs(y - car.getY()) < 3);
     }
 
     private boolean isCarUnloadable() {
