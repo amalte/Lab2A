@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -6,35 +5,35 @@ import java.util.Deque;
  * @author SM
  * Subclass of MotorizedVehicle. Represents a transporter object
  */
-public class Transporter implements ITransporter {
-    
-    private int x;
-    private int y;
+public class TransportableHolder implements ITransportableHolder {
+
     private boolean rampOpen = false;
     private int maxLoad;
     private Deque<Car> loadedCars = new ArrayDeque<>();
+    private double x;
+    private  double y;
 
     /**
-     * Constructor for Transporter class
+     * Constructor for TransportableHolder class
+     * @param maxLoad The maximum load of Transportables
+     * @param x X position of the TransportableHolder
+     * @param y Y position of the TransportableHolder
      */
-    public Transporter(int maxLoad) {
+    public TransportableHolder(int maxLoad, double x, double y) {
         this.maxLoad = maxLoad;
-        this.x =
-                // TODO - VolvoFH16 coordinate values should be same as transporter
+        this.x = x;;
+        this.y = y;
     }
 
     @Override
     public void raiseRamp() {
-        if(!isMoving()){
-            rampOpen = false;
-        }
+        rampOpen = false;
+
     }
 
     @Override
     public void lowerRamp() {
-        if(!isMoving()) {
-            rampOpen = true;
-        }
+        rampOpen = true;
     }
 
     public boolean isRampOpen() {
@@ -42,35 +41,12 @@ public class Transporter implements ITransporter {
     }
 
     public void setRampOpen(boolean open) {
-        if(!isMoving()) {
-            rampOpen = open;
-        }
-    }
-
-    @Override
-    public int getX() {
-        return x;
-    }
-
-    @Override
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    @Override
-    public int getY() {
-        return y;
-    }
-
-    @Override
-    public void setY(int y) {
-        this.y = y;
+        rampOpen = open;
     }
 
     public void loadCar(Car car) {
         if(isCarLoadable(car)) {
             loadedCars.push(car);
-
         }
     }
 
@@ -97,20 +73,6 @@ public class Transporter implements ITransporter {
     @Override
     public void setMaxLoad(int maxLoad) {
         this.maxLoad = maxLoad;
-    }
-
-    @Override
-    public void gas(double amount) {
-        if(!isRampOpen()) {
-            super.gas(amount);
-        }
-    }
-
-    @Override
-    public void setCurrentSpeed(double speed) {
-        if(!isRampOpen()) {
-            super.setCurrentSpeed(speed);
-        }
     }
 
     private boolean isCarLoadable(Car car) {

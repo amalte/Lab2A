@@ -4,56 +4,59 @@ import java.awt.*;
  * @author SM
  * Subclass of MotorizedVehicle. Represents a FlatbedTruck object
  */
-public abstract class Truck extends MotorizedVehicle {
+public class Truck extends MotorizedVehicle {
 
-    private int flatbedDegree = 0;
+    /**
+     * Angle of the Trucks ramp/bed
+     */
+    private int angle = 0;
 
     public Truck(int nrDoors, double enginePower, Color color, String modelName) {
         super(nrDoors, enginePower, color, modelName);
     }
 
-    public void lowerFlatbed() {
+    public void reduceAngle() {
         if(!isMoving()){
-            int degree = flatbedDegree - 1;
+            int degree = angle - 1;
             degree = Math.min(degree, 70);
-            flatbedDegree = Math.max(degree, 0);
+            angle = Math.max(degree, 0);
         }
     }
 
-    public void raiseFlatbed() {
+    public void increaseAngle() {
         if(!isMoving()){
-            int degree = flatbedDegree + 1;
+            int degree = angle + 1;
             degree = Math.min(degree, 70);
-            flatbedDegree = Math.max(degree, 0);
+            angle = Math.max(degree, 0);
         }
     }
 
-    public int getFlatbedDegree() {
-        return flatbedDegree;
+    public int getAngle() {
+        return angle;
     }
 
-    public void setFlatbedDegree(int degree) {
+    public void setAngle(int degree) {
         if(!isMoving()) {
             degree = Math.min(degree, 70);
-            flatbedDegree = Math.max(degree, 0);
+            angle = Math.max(degree, 0);
         }
     }
 
     @Override
     public void gas(double amount) {
-        if(isFlatbedLowered()) {
+        if(noAngle()) {
             super.gas(amount);
         }
     }
 
     @Override
     public void setCurrentSpeed(double speed) {
-        if(isFlatbedLowered()) {
+        if(noAngle()) {
             super.setCurrentSpeed(speed);
         }
     }
 
-    private boolean isFlatbedLowered(){
-        return flatbedDegree == 0;
+    private boolean noAngle(){
+        return angle == 0;
     }
 }

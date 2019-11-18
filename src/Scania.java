@@ -2,7 +2,7 @@ import java.awt.*;
 
 /**
  * @author SM
- * Subclass of FlatbedTruck. Represents a flatbed truck of model Scania
+ * Subclass of Truck. Represents a Truck of model Scania
  */
 public class Scania extends Truck {
 
