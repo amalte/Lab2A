@@ -11,7 +11,8 @@ public class Transporter implements ITransporter {
     //test2
     //test igen4
     //test ännu en gång
-    //tttes
+    //testste32
+    //tttes32
     private int x;
     private int y;
     private boolean rampOpen = false;
