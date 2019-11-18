@@ -4,7 +4,7 @@ import java.awt.*;
  * @author SM
  * Subclass of FlatbedTruck. Represents a flatbed truck of model Scania
  */
-public class Scania extends FlatbedTruck {
+public class Scania extends Truck {
 
     /**
      * Constructor for Scania class

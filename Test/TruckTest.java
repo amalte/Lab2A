@@ -2,7 +2,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class TruckTest {
-    FlatbedTruck truck = new Scania();
+    Truck truck = new Scania();
 
     @Test
     public void testLowerFlatbed() {

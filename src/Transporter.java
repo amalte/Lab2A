@@ -6,8 +6,10 @@ import java.util.Deque;
  * @author SM
  * Subclass of MotorizedVehicle. Represents a transporter object
  */
-public abstract class Transporter extends MotorizedVehicle implements IHoldTransportable {
+public class Transporter implements ITransporter {
 
+    private int x;
+    private int y;
     private boolean rampOpen = false;
     private int maxLoad;
     private Deque<Car> loadedCars = new ArrayDeque<>();
@@ -15,9 +17,10 @@ public abstract class Transporter extends MotorizedVehicle implements IHoldTrans
     /**
      * Constructor for Transporter class
      */
-    public Transporter(int nrDoors, double enginePower, Color color, String modelName, int maxLoad) {
-        super(nrDoors, enginePower, color, modelName);
+    public Transporter(int maxLoad) {
         this.maxLoad = maxLoad;
+        this.x =
+                // TODO - VolvoFH16 coordinate values should be same as transporter
     }
 
     @Override
@@ -42,6 +45,26 @@ public abstract class Transporter extends MotorizedVehicle implements IHoldTrans
         if(!isMoving()) {
             rampOpen = open;
         }
+    }
+
+    @Override
+    public int getX() {
+        return x;
+    }
+
+    @Override
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    @Override
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public void setY(int y) {
+        this.y = y;
     }
 
     public void loadCar(Car car) {
