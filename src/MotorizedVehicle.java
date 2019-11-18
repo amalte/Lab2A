@@ -1,7 +1,7 @@
 import java.awt.*;
 
 /**
- * @author Team SM
+ * @author SM
  * Abstract superclass to all MotorVehicle subobjects
  */
 public abstract class MotorizedVehicle implements IMovable {

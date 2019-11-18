@@ -1,7 +1,7 @@
 import java.awt.*;
 
 /**
- * @author Team SM
+ * @author SM
  * Abstract superclass to all Car subobjects
  */
 public abstract class Car extends MotorizedVehicle implements ITransportable {
