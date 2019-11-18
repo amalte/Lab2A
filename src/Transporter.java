@@ -9,8 +9,9 @@ import java.util.Deque;
 public class Transporter implements ITransporter {
 
     //test2
-    //test igen2
+    //test igen4
     //test ännu en gång
+    //tttes
     private int x;
     private int y;
     private boolean rampOpen = false;
