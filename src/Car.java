@@ -6,8 +6,6 @@ import java.awt.*;
  */
 public abstract class Car extends MotorizedVehicle implements ITransportable {
 
-    private double distanceToRamp = 0;
-
     /**
      * Constructor for Car class
      */
@@ -16,11 +14,23 @@ public abstract class Car extends MotorizedVehicle implements ITransportable {
         stopEngine();
     }
 
-    public double getDistanceToRamp() {
-        return distanceToRamp;
+    @Override
+    public void setX(double x) {
+        super.setX(x);
     }
 
-    public void setDistanceToRamp(double distance) {
-        distanceToRamp = distance;
+    @Override
+    public double getX() {
+        return super.getX();
+    }
+
+    @Override
+    public void setY(double y) {
+        super.setY(y);
+    }
+
+    @Override
+    public double getY() {
+        return super.getY();
     }
 }

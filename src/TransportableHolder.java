@@ -3,14 +3,15 @@ import java.util.Deque;
 
 /**
  * @author SM
- * Subclass of MotorizedVehicle. Represents a transporter object
+ * Represents a TransportableHolder object (an object that can hold Transportable objects)
  */
 public class TransportableHolder implements ITransportableHolder {
 
     private int maxLoad;
-    private Deque<Car> loadedCars = new ArrayDeque<>();
+    private Deque<ITransportable> loadedTransportables = new ArrayDeque<>();
+    private double loadDistance = 3;
     private double x;
-    private  double y;
+    private double y;
 
     /**
      * Constructor for TransportableHolder class
@@ -24,24 +25,24 @@ public class TransportableHolder implements ITransportableHolder {
         this.y = y;
     }
 
-    public void loadCar(Car car) {
-        if(isCarLoadable(car)) {
-            loadedCars.push(car);
+    public void loadTransport(ITransportable transport) {
+        if(isTransportLoadable(transport)) {
+            loadedTransportables.push(transport);
         }
     }
 
-    public void unloadCar() {
-        if(isCarUnloadable()) {
-            Car car = loadedCars.pop();
-            car.setX(x + 3);
-            car.setY(y + 3);
+    public void dropTransport() {
+        if(isTransportDroppable()) {
+            ITransportable t = loadedTransportables.pop();
+            t.setX(x + loadDistance);
+            t.setY(y + loadDistance);
         }
     }
 
-    public void updateLoadedCarsPosition() {
-        for(Car c : loadedCars) {
-            c.setX(x);
-            c.setY(y);
+    public void updateLoadedTransportPosition() {
+        for(ITransportable t : loadedTransportables) {
+            t.setX(x);
+            t.setY(y);
         }
     }
 
@@ -55,11 +56,11 @@ public class TransportableHolder implements ITransportableHolder {
         this.maxLoad = maxLoad;
     }
 
-    private boolean isCarLoadable(Car car) {
-        return loadedCars.size() < maxLoad && (Math.abs(x - car.getX()) < 3 && Math.abs(y - car.getY()) < 3);
+    private boolean isTransportLoadable(ITransportable transport) {
+        return loadedTransportables.size() < maxLoad && (Math.abs(x - transport.getX()) < loadDistance && Math.abs(y - transport.getY()) < loadDistance);
     }
 
-    private boolean isCarUnloadable() {
-        return loadedCars.size() != 0;
+    private boolean isTransportDroppable() {
+        return loadedTransportables.size() != 0;
     }
 }

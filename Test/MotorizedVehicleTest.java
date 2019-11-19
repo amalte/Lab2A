@@ -1,7 +1,7 @@
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MovableTest {
+public class MotorizedVehicleTest {
 
     Volvo240 volvo = new Volvo240();
     Saab95 saab = new Saab95();
@@ -57,12 +57,12 @@ public class MovableTest {
         volvo.setCurrentDirection(IMovable.Direction.NORTH);
         volvo.setCurrentSpeed(5);
         volvo.move();
-        assertEquals(5, volvo.y, 0.001);
+        assertEquals(5, volvo.getY(), 0.001);
 
         saab.setCurrentDirection(IMovable.Direction.EAST);
         saab.setCurrentSpeed(5);
         saab.move();
-        assertEquals(5, saab.x, 0.001);
+        assertEquals(5, saab.getX(), 0.001);
     }
 
     @Test

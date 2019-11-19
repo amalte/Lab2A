@@ -1,9 +1,8 @@
 public interface ITransportableHolder {
-
     int getMaxLoad();
     void setMaxLoad(int maxLoad);
 
-    void loadCar(Car car);
-    void unloadCar();
-    void updateLoadedCarsPosition();
+    void loadTransport(ITransportable transport);
+    void dropTransport();
+    void updateLoadedTransportPosition();
 }
