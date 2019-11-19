@@ -1,3 +1,5 @@
+import org.junit.Ignore;
+
 import java.awt.*;
 
 /**
@@ -20,21 +22,8 @@ public class VolvoFH16 extends Truck implements ITransportableHolder {
     }
 
     @Override
-    public void raiseRamp() {
-        if(!isMoving()) {
-            transportableHolder.raiseRamp();
-        }
-    }
-
-    @Override
-    public void lowerRamp() {
-        if(!isMoving()) {
-            transportableHolder.lowerRamp();
-        }
-    }
-
-    @Override
     public void loadCar(Car car) {
+        // TODO - Cannot load if ramp is closed
         if(!isMoving()) {
             transportableHolder.loadCar(car);
         }
@@ -42,7 +31,10 @@ public class VolvoFH16 extends Truck implements ITransportableHolder {
 
     @Override
     public void unloadCar() {
-        transportableHolder.unloadCar();
+        // TODO - Cannot unload if ramp is open
+        if(!isMoving()) {
+            transportableHolder.unloadCar();
+        }
     }
 
     @Override
@@ -61,12 +53,21 @@ public class VolvoFH16 extends Truck implements ITransportableHolder {
     }
 
     @Override
-    public boolean isRampOpen() {
-        return transportableHolder.isRampOpen();
+    public void increaseAngle() {
+        setAngle(70);
     }
 
     @Override
-    public void setRampOpen(boolean open) {
-        transportableHolder.setRampOpen(open);
+    public void decreaseAngle() {
+        setAngle(0);
+    }
+
+    @Override
+    public void setAngle(int degree) {
+        if(degree != 0 || degree != 70) {
+            return;
+        } else {
+            setAngle(degree);
+        }
     }
 }

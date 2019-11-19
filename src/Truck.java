@@ -15,7 +15,7 @@ public class Truck extends MotorizedVehicle {
         super(nrDoors, enginePower, color, modelName);
     }
 
-    public void reduceAngle() {
+    public void decreaseAngle() {
         if(!isMoving()){
             int degree = angle - 1;
             degree = Math.min(degree, 70);

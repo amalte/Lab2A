@@ -7,7 +7,6 @@ import java.util.Deque;
  */
 public class TransportableHolder implements ITransportableHolder {
 
-    private boolean rampOpen = false;
     private int maxLoad;
     private Deque<Car> loadedCars = new ArrayDeque<>();
     private double x;
@@ -23,25 +22,6 @@ public class TransportableHolder implements ITransportableHolder {
         this.maxLoad = maxLoad;
         this.x = x;;
         this.y = y;
-    }
-
-    @Override
-    public void raiseRamp() {
-        rampOpen = false;
-
-    }
-
-    @Override
-    public void lowerRamp() {
-        rampOpen = true;
-    }
-
-    public boolean isRampOpen() {
-        return rampOpen;
-    }
-
-    public void setRampOpen(boolean open) {
-        rampOpen = open;
     }
 
     public void loadCar(Car car) {
@@ -76,10 +56,10 @@ public class TransportableHolder implements ITransportableHolder {
     }
 
     private boolean isCarLoadable(Car car) {
-        return isRampOpen() && loadedCars.size() < maxLoad && (Math.abs(x - car.getX()) < 3 && Math.abs(y - car.getY()) < 3);
+        return loadedCars.size() < maxLoad && (Math.abs(x - car.getX()) < 3 && Math.abs(y - car.getY()) < 3);
     }
 
     private boolean isCarUnloadable() {
-        return loadedCars.size() != 0 && isRampOpen();
+        return loadedCars.size() != 0;
     }
 }
