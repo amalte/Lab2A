@@ -8,6 +8,9 @@ import java.util.Deque;
 public class TransportableHolder implements ITransportableHolder {
 
     private int maxLoad;
+    private double maxWidthMeter;
+    private double maxHeightMeter;
+    private double maxLengthMeter;
     private Deque<ITransportable> loadedTransportables = new ArrayDeque<>();
     private double loadDistance = 3;
     private double x;
@@ -19,8 +22,11 @@ public class TransportableHolder implements ITransportableHolder {
      * @param x X position of the TransportableHolder
      * @param y Y position of the TransportableHolder
      */
-    public TransportableHolder(int maxLoad, double x, double y) {
+    public TransportableHolder(int maxLoad, double maxWidth, double maxHeight, double maxLength, double x, double y) {
         this.maxLoad = maxLoad;
+        maxWidthMeter = maxWidth;
+        maxHeightMeter = maxHeight;
+        maxLengthMeter = maxLength;
         this.x = x;;
         this.y = y;
     }
@@ -57,10 +63,20 @@ public class TransportableHolder implements ITransportableHolder {
     }
 
     private boolean isTransportLoadable(ITransportable transport) {
-        return loadedTransportables.size() < maxLoad && (Math.abs(x - transport.getX()) < loadDistance && Math.abs(y - transport.getY()) < loadDistance);
+        return loadedTransportables.size() < maxLoad
+                && transportCloseEnough(transport)
+                && !transportTooBig(transport);
     }
 
     private boolean isTransportDroppable() {
         return loadedTransportables.size() != 0;
+    }
+
+    private boolean transportCloseEnough(ITransportable transport) {
+        return (Math.abs(x - transport.getX()) < loadDistance) && (Math.abs(y - transport.getY()) < loadDistance);
+    }
+
+    private boolean transportTooBig(ITransportable transport) {
+        return (transport.getWidth() > maxWidthMeter) || (transport.getHeight() > maxHeightMeter) || (transport.getLength() > maxLengthMeter);
     }
 }

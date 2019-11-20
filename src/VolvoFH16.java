@@ -12,19 +12,20 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder {
     private Ramp ramp;
     private TransportableHolder transportableHolder;
 
-
     /**
      * Constructor for VolvoFH16 class
      */
     public VolvoFH16() {
-        super(2, 350, Color.white, "VolvoFH16");
-        transportableHolder = new TransportableHolder(5, getX(), getY());
+        super(2, 350, Color.white, "VolvoFH16", 2.5, 3, 9);
+        transportableHolder = new TransportableHolder(5, 2, 1.8, 5, getX(), getY());
         ramp = new Ramp();
     }
 
     @Override
     public void openRamp() {
-        ramp.openRamp();
+        if(!isMoving()) {
+            ramp.openRamp();
+        }
     }
 
     @Override
@@ -44,21 +45,16 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder {
 
     @Override
     public void loadTransport(ITransportable t) {
-        if(!isMoving() && !isRampOpen()) {
+        if(!isMoving() && isRampOpen()) {
             transportableHolder.loadTransport(t);
         }
     }
 
     @Override
     public void dropTransport() {
-        if(!isMoving() && !isRampOpen()) {
+        if(!isMoving() && isRampOpen()) {
             transportableHolder.dropTransport();
         }
-    }
-
-    @Override
-    public void updateLoadedTransportPosition() {
-        transportableHolder.updateLoadedTransportPosition();
     }
 
     @Override
@@ -69,6 +65,12 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder {
     @Override
     public void setMaxLoad(int maxLoad) {
         transportableHolder.setMaxLoad(maxLoad);
+    }
+
+    @Override
+    public void move() {
+        super.move();
+        transportableHolder.updateLoadedTransportPosition();
     }
 
     @Override

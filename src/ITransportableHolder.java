@@ -4,5 +4,4 @@ public interface ITransportableHolder {
 
     void loadTransport(ITransportable transport);
     void dropTransport();
-    void updateLoadedTransportPosition();
 }

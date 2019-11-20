@@ -11,7 +11,7 @@ public class Scania extends Truck implements IFlatbed {
      * Constructor for Scania class
      */
     public Scania() {
-        super(2, 250, Color.darkGray, "Scania");
+        super(2, 250, Color.darkGray, "Scania", 2.5, 3, 7);
         flatbed = new Flatbed(70);
     }
 

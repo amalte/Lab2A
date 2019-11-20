@@ -4,10 +4,10 @@ import java.awt.*;
  * @author SM
  * Subclass of MotorizedVehicle. Represents a Truck object
  */
-public class Truck extends MotorizedVehicle {
+public abstract class Truck extends MotorizedVehicle {
 
-    public Truck(int nrDoors, double enginePower, Color color, String modelName) {
-        super(nrDoors, enginePower, color, modelName);
+    public Truck(int nrDoors, double enginePower, Color color, String modelName, double width, double height, double length) {
+        super(nrDoors, enginePower, color, modelName, width, height, length);
         stopEngine();
     }
 }

@@ -1,18 +1,18 @@
 public interface ITransportable {
-    /*
+
     double getWidth();
-    double setWidth();
+    void setWidth(double w);
 
     double getHeight();
-    double setHeight();
+    void setHeight(double h);
 
     double getLength();
-    double setLength();
-    */
+    void setLength(double l);
 
-    void setX(double x);
     double getX();
+    void setX(double x);
 
+    double getY();
     void setY(double y);
-    double getY();;
+
 }

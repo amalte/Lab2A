@@ -5,14 +5,17 @@ import java.awt.*;
  * Abstract superclass to all MotorVehicle subobjects
  */
 public abstract class MotorizedVehicle implements IMovable {
-    private final int nrDoors; // Number of doors on the car
-    private final double enginePower; // Engine power of the car
-    private double currentSpeed; // The current speed of the car
-    private Color color; // Color of the car
-    private final String modelName; // The car model name
-    private Direction currentDirection = Direction.NORTH; // Direction the car is facing
-    private double x; // x position of car
-    private double y; // y position of car
+    private final int nrDoors; // Number of doors on the vehicle
+    private final double enginePower; // Engine power of the vehicle
+    private double currentSpeed; // The current speed of the vehicle
+    private Color color; // Color of the vehicle
+    private final String modelName; // The vehicle model name
+    private Direction currentDirection = Direction.NORTH; // Direction the vehicle is facing
+    private double x; // X position of vehicle
+    private double y; // Y position of vehicle
+    private double widthMeter; // Width of vehicle in meters
+    private double heightMeter; // Height of vehicle in meters
+    private double lengthMeter; // Length of vehicle meters
 
     /**
      * Constructor for MotorizedVehicle class
@@ -21,11 +24,14 @@ public abstract class MotorizedVehicle implements IMovable {
      * @param color Color of a Car
      * @param modelName Model name of a Car
      */
-    public MotorizedVehicle(int nrDoors, double enginePower, Color color, String modelName) {
+    public MotorizedVehicle(int nrDoors, double enginePower, Color color, String modelName, double width, double height, double length) {
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.modelName = modelName;
+        widthMeter = width;
+        heightMeter = height;
+        lengthMeter = length;
         stopEngine();
     }
 
@@ -215,6 +221,30 @@ public abstract class MotorizedVehicle implements IMovable {
 
     public void setY(double y) {
         this.y = y;
+    }
+
+    public double getWidth() {
+        return widthMeter;
+    }
+
+    public void setWidth(double width) {
+        this.widthMeter = width;
+    }
+
+    public double getHeight() {
+        return heightMeter;
+    }
+
+    public void setHeight(double height) {
+        this.heightMeter = height;
+    }
+
+    public double getLength() {
+        return lengthMeter;
+    }
+
+    public void setLength(double length) {
+        this.lengthMeter = length;
     }
 
     /**

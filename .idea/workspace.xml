@@ -2,39 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a53155-a816-4e78-a8f4-a6f56ba08ad0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Flatbed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IFlatbed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IRamp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ramp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarWorkshop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/MovableTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/MovableTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab1B.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1B.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/MovableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MotorizedVehicleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/TruckTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/ScaniaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/VolvoFH16Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/VolvoFH16Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Car$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Lab1del1PM.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Movable$Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Movable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/ITransportable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/ITransportable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/ITransportableHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/ITransportableHolder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Saab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Saab95.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Scania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/TransportableHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/TransportableHolder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Truck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/MovableTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/TruckTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Volvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Volvo240.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/VolvoFH16.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/VolvoFH16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/VolvoFH16Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Lab1B/VolvoFH16Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ITransportable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ITransportable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ITransportableHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ITransportableHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MotorizedVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MotorizedVehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Saab95.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TransportableHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportableHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Volvo240.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VolvoFH16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VolvoFH16.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,7 +83,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.VolvoFH16Test">
     <configuration default="true" type="Application" factoryName="Application">
       <module name="Lab1B" />
       <method v="2">
@@ -136,8 +128,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VolvoFH16Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab1B" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="VolvoFH16Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VolvoFH16Test" />
         <item itemvalue="JUnit.ScaniaTest" />
         <item itemvalue="JUnit.MotorizedVehicleTest" />
         <item itemvalue="JUnit.MotorizedVehicleTest.testGas" />
