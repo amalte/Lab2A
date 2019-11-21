@@ -1,3 +1,5 @@
+import Interfaces.IRamp;
+
 /**
  * @author SM
  * Represents a Ramp object

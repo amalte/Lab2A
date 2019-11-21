@@ -1,24 +1,27 @@
+import Interfaces.IRamp;
+import Interfaces.ITransporter;
+
 import java.awt.*;
 import java.util.Deque;
 
 /**
  * @author SM
- * Subclass of Truck. Represents a truck of model VolvoFH16 that has a ramp and can hold Transportables (implements IRamp and ITransportableHolder)
+ * Subclass of Truck. Represents a truck of model VolvoFH16 that has a ramp and can hold Transportables (implements Interfaces.IRamp and ITransportableHolder)
  */
-public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder<Car> {
+public class VolvoFH16 extends Truck implements IRamp, ITransporter<Car> {
 
     /**
-     * This truck has a ramp and can hold Transportables (implements IRamp and ITransportableHolder)
+     * This truck has a ramp and can hold Transportables (implements Interfaces.IRamp and ITransportableHolder)
      */
     private Ramp ramp;
-    private TransportableHolder transportableHolder;
+    private Transporter transportableHolder;
 
     /**
      * Constructor for VolvoFH16 class
      */
     public VolvoFH16() {
         super(2, 350, Color.white, "VolvoFH16", 2.5, 3, 9);
-        transportableHolder = new TransportableHolder(5, 2, 1.8, 5, 3);
+        transportableHolder = new Transporter<Car>(5, 2, 1.8, 5, 3);
         ramp = new Ramp();
     }
 
@@ -45,17 +48,17 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder<Car>
     }
 
     @Override
-    public boolean loadTransport(Car t) {
+    public boolean loadTransport(Car t, double pointX, double pointY) {
         if(!isMoving() && isRampOpen()) {
-            return transportableHolder.loadTransport(t);
+            return transportableHolder.loadTransport(t, getX(), getY());
         }
         return false;
     }
 
     @Override
-    public Car dropTransport() {
+    public Car dropTransport(double pointX, double pointY) {
         if(!isMoving() && isRampOpen()) {
-            return  (Car) transportableHolder.dropTransport();
+            return  (Car) transportableHolder.dropTransport(getX(), getY());
         }
         return null;
     }
@@ -71,14 +74,14 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder<Car>
     }
 
     @Override
-    public Deque<ITransportable> getLoadedTransportables() {
-        return transportableHolder.getLoadedTransportables();
+    public Deque<Car> getLoadedTransport() {
+        return transportableHolder.getLoadedTransport();
     }
 
     @Override
     public void move() {
         super.move();
-        transportableHolder.updateLoadedTransportPosition();
+        transportableHolder.setLoadedTransportPosition(getX(), getY());
     }
 
     @Override

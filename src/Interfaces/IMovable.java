@@ -1,3 +1,5 @@
+package Interfaces;
+
 public interface IMovable {
     /**
      * Possible directions for object
@@ -22,10 +24,7 @@ public interface IMovable {
     void turnRight();
 
     double getX();
-
     void setX(double x);
-
     double getY();
-
     void setY(double y);
 }

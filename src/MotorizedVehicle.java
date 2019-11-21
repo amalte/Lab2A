@@ -1,3 +1,5 @@
+import Interfaces.IMovable;
+
 import java.awt.*;
 
 /**
@@ -36,7 +38,7 @@ public abstract class MotorizedVehicle implements IMovable {
     }
 
     /**
-     * Moves the MotorizedVehicle depending on the direction it's facing. Inherits from IMovable interface
+     * Moves the MotorizedVehicle depending on the direction it's facing. Inherits from Interfaces.IMovable interface
      */
     @Override
     public void move() {

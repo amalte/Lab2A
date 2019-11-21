@@ -1,3 +1,5 @@
+import Interfaces.IFlatbed;
+
 /**
  * @author SM
  * Represents a Flatbed object

@@ -1,3 +1,5 @@
+package Interfaces;
+
 /**
  * @author SM
  * Interface for objects that have a flatbed
