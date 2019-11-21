@@ -1,7 +1,10 @@
-public interface ITransportableHolder {
+import java.util.Deque;
+
+public interface ITransportableHolder<T> {
     int getMaxLoad();
     void setMaxLoad(int maxLoad);
+    Deque<ITransportable> getLoadedTransportables();
 
-    void loadTransport(ITransportable transport);
-    void dropTransport();
+    boolean loadTransport(T transport);
+    T dropTransport();
 }

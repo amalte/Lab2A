@@ -1,3 +1,4 @@
+import java.io.CharArrayReader;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -5,44 +6,49 @@ import java.util.Deque;
  * @author SM
  * Represents a TransportableHolder object (an object that can hold Transportable objects)
  */
-public class TransportableHolder implements ITransportableHolder {
+public class TransportableHolder implements ITransportableHolder<ITransportable> {
 
     private int maxLoad;
     private double maxWidthMeter;
     private double maxHeightMeter;
     private double maxLengthMeter;
-    private Deque<ITransportable> loadedTransportables = new ArrayDeque<>();
-    private double loadDistance = 3;
+    protected Deque<ITransportable> loadedTransportables = new ArrayDeque<>();
+    private double loadAndDropDistanceMeter;
     private double x;
     private double y;
 
     /**
      * Constructor for TransportableHolder class
      * @param maxLoad The maximum load of Transportables
-     * @param x X position of the TransportableHolder
-     * @param y Y position of the TransportableHolder
      */
-    public TransportableHolder(int maxLoad, double maxWidth, double maxHeight, double maxLength, double x, double y) {
+    public TransportableHolder(int maxLoad, double maxWidth, double maxHeight, double maxLength, double loadAndDropDistance) {
         this.maxLoad = maxLoad;
         maxWidthMeter = maxWidth;
         maxHeightMeter = maxHeight;
         maxLengthMeter = maxLength;
-        this.x = x;;
-        this.y = y;
+        this.loadAndDropDistanceMeter = loadAndDropDistance;
     }
 
-    public void loadTransport(ITransportable transport) {
+    @Override
+    public boolean loadTransport(ITransportable transport) {
         if(isTransportLoadable(transport)) {
             loadedTransportables.push(transport);
+            transport.setX(x);
+            transport.setY(y);
+            return true;
         }
+        return false;
     }
 
-    public void dropTransport() {
-        if(isTransportDroppable()) {
-            ITransportable t = loadedTransportables.pop();
-            t.setX(x + loadDistance);
-            t.setY(y + loadDistance);
-        }
+    @Override
+    public ITransportable dropTransport() {
+       if(isTransportDroppable()) {
+           ITransportable t = loadedTransportables.pop();
+           t.setX(x + loadAndDropDistanceMeter);
+           t.setY(x + loadAndDropDistanceMeter);
+           return t;
+       }
+       return null;
     }
 
     public void updateLoadedTransportPosition() {
@@ -62,6 +68,11 @@ public class TransportableHolder implements ITransportableHolder {
         this.maxLoad = maxLoad;
     }
 
+    @Override
+    public Deque<ITransportable> getLoadedTransportables() {
+        return loadedTransportables;
+    }
+
     private boolean isTransportLoadable(ITransportable transport) {
         return loadedTransportables.size() < maxLoad
                 && transportCloseEnough(transport)
@@ -72,8 +83,8 @@ public class TransportableHolder implements ITransportableHolder {
         return loadedTransportables.size() != 0;
     }
 
-    private boolean transportCloseEnough(ITransportable transport) {
-        return (Math.abs(x - transport.getX()) < loadDistance) && (Math.abs(y - transport.getY()) < loadDistance);
+    public boolean transportCloseEnough(ITransportable transport) {
+        return (Math.abs(x - transport.getX()) < loadAndDropDistanceMeter) && (Math.abs(y - transport.getY()) < loadAndDropDistanceMeter);
     }
 
     private boolean transportTooBig(ITransportable transport) {

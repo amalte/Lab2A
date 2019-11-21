@@ -1,10 +1,11 @@
-public class CarWorkshop<T extends Car> implements ITransportableHolder {
+import java.util.Deque;
 
-    private T t;
+public class CarWorkshop<T extends Car> implements ITransportableHolder<T> {
+
     TransportableHolder transportableHolder;
 
-    public CarWorkshop(int maxLoad, double maxWidth, double maxHeight, double maxLength, double x, double y) {
-        transportableHolder = new TransportableHolder(maxLoad, maxWidth, maxHeight, maxLength, x, y);
+    public CarWorkshop(int maxLoad, double maxWidth, double maxHeight, double maxLength) {
+        transportableHolder = new TransportableHolder(maxLoad, maxWidth, maxHeight, maxLength, 5);
     }
 
     @Override
@@ -18,12 +19,17 @@ public class CarWorkshop<T extends Car> implements ITransportableHolder {
     }
 
     @Override
-    public void loadTransport(ITransportable transport) {
-        transportableHolder.loadTransport(transport);
+    public Deque<ITransportable> getLoadedTransportables() {
+        return transportableHolder.getLoadedTransportables();
     }
 
     @Override
-    public void dropTransport() {
-        transportableHolder.dropTransport();
+    public boolean loadTransport(T transport) {
+            return transportableHolder.loadTransport(transport);
+    }
+
+    @Override
+    public T dropTransport() {
+        return (T) transportableHolder.dropTransport();
     }
 }

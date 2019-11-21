@@ -20,4 +20,12 @@ public interface IMovable {
      * Makes object turn right depending on current direction
      */
     void turnRight();
+
+    double getX();
+
+    void setX(double x);
+
+    double getY();
+
+    void setY(double y);
 }

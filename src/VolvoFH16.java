@@ -1,10 +1,11 @@
 import java.awt.*;
+import java.util.Deque;
 
 /**
  * @author SM
  * Subclass of Truck. Represents a truck of model VolvoFH16 that has a ramp and can hold Transportables (implements IRamp and ITransportableHolder)
  */
-public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder {
+public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder<Car> {
 
     /**
      * This truck has a ramp and can hold Transportables (implements IRamp and ITransportableHolder)
@@ -17,7 +18,7 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder {
      */
     public VolvoFH16() {
         super(2, 350, Color.white, "VolvoFH16", 2.5, 3, 9);
-        transportableHolder = new TransportableHolder(5, 2, 1.8, 5, getX(), getY());
+        transportableHolder = new TransportableHolder(5, 2, 1.8, 5, 3);
         ramp = new Ramp();
     }
 
@@ -44,17 +45,19 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder {
     }
 
     @Override
-    public void loadTransport(ITransportable t) {
+    public boolean loadTransport(Car t) {
         if(!isMoving() && isRampOpen()) {
-            transportableHolder.loadTransport(t);
+            return transportableHolder.loadTransport(t);
         }
+        return false;
     }
 
     @Override
-    public void dropTransport() {
+    public Car dropTransport() {
         if(!isMoving() && isRampOpen()) {
-            transportableHolder.dropTransport();
+            return  (Car) transportableHolder.dropTransport();
         }
+        return null;
     }
 
     @Override
@@ -65,6 +68,11 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder {
     @Override
     public void setMaxLoad(int maxLoad) {
         transportableHolder.setMaxLoad(maxLoad);
+    }
+
+    @Override
+    public Deque<ITransportable> getLoadedTransportables() {
+        return transportableHolder.getLoadedTransportables();
     }
 
     @Override

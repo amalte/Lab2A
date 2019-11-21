@@ -98,6 +98,26 @@ public abstract class MotorizedVehicle implements IMovable {
         }
     }
 
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
+
+    @Override
+    public void setY(double y) {
+        this.y = y;
+    }
+
     /**
      * Increases speed of car depending on amount by calling on incrementSpeed
      * @param amount Amount the speed should be increased with
@@ -133,6 +153,10 @@ public abstract class MotorizedVehicle implements IMovable {
      * @param amount Amount the speed should decrement with
      */
     private void decrementSpeed(double amount){ setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount); }
+
+    public String getModelName() {
+        return modelName;
+    }
 
     /**
      * Returns number of doors on car
@@ -207,21 +231,7 @@ public abstract class MotorizedVehicle implements IMovable {
      */
     public void setCurrentDirection(Direction currentDirection) { this.currentDirection = currentDirection; }
 
-    public double getX() {
-        return x;
-    }
 
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
 
     public double getWidth() {
         return widthMeter;
