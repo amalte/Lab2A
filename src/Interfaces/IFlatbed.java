@@ -6,7 +6,14 @@ package Interfaces;
  */
 public interface IFlatbed {
 
+    /**
+     * Lowers flatbed
+     */
     void lowerFlatbed();
+
+    /**
+     * Raises flatbed
+     */
     void raiseFlatbed();
 
     int getFlatbedAngle();
@@ -14,5 +21,9 @@ public interface IFlatbed {
 
     int getMaxFlatbedAngle();
 
+    /**
+     * Is flatbed lowered?
+     * @return Returns true if flatbed is not lowered (when flatbed has no angle)
+     */
     boolean flatbedHasNoAngle();
 }

@@ -28,41 +28,41 @@ public class VolvoFH16Test {
     public void loadTransport() {
         resetTruck();
         truckTransporter.openRamp();
-        assertEquals(true, truckTransporter.loadTransport(volvo, 0, 0));
+        assertEquals(true, truckTransporter.loadTransport(volvo));
 
         resetTruck();
         truckTransporter.closeRamp();
-        assertEquals(false, truckTransporter.loadTransport(volvo, 0, 0));
+        assertEquals(false, truckTransporter.loadTransport(volvo));
 
         resetTruck();
         truckTransporter.openRamp();
-        truckTransporter.loadTransport(saab, 0, 0);
-        truckTransporter.loadTransport(saab, 0, 0);
-        truckTransporter.loadTransport(saab,0, 0);
-        truckTransporter.loadTransport(saab,0, 0);
-        truckTransporter.loadTransport(saab, 0, 0);
-        assertEquals(false, truckTransporter.loadTransport(saab, 0, 0));
+        truckTransporter.loadTransport(saab);
+        truckTransporter.loadTransport(saab);
+        truckTransporter.loadTransport(saab);
+        truckTransporter.loadTransport(saab);
+        truckTransporter.loadTransport(saab);
+        assertEquals(false, truckTransporter.loadTransport(saab));
     }
 
     @Test
     public void dropTransport() {
         resetTruck();
         truckTransporter.openRamp();
-        truckTransporter.loadTransport(saab,0, 0);
-        assertEquals(saab, truckTransporter.dropTransport(0, 0));
+        truckTransporter.loadTransport(saab);
+        assertEquals(saab, truckTransporter.dropTransport());
 
         resetTruck();
         truckTransporter.openRamp();
-        truckTransporter.loadTransport(saab, 0, 0);
+        truckTransporter.loadTransport(saab);
         truckTransporter.closeRamp();
-        assertEquals(null, truckTransporter.dropTransport(0, 0));
+        assertEquals(null, truckTransporter.dropTransport());
     }
 
     @Test
     public void move() {
         resetTruck();
         truckTransporter.openRamp();
-        truckTransporter.loadTransport(saab, 0, 0);
+        truckTransporter.loadTransport(saab);
         truckTransporter.setX(50);
         truckTransporter.setY(50);
         truckTransporter.move();
@@ -94,4 +94,9 @@ public class VolvoFH16Test {
         assertEquals(0, truckTransporter.getCurrentSpeed());
     }
 
+    @Test
+    public void notFull() {
+        resetTruck();
+        assertEquals(0, truckTransporter.getLoadedTransport().size());
+    }
 }

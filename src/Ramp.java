@@ -6,7 +6,7 @@ import Interfaces.IRamp;
  */
 public class Ramp implements IRamp {
 
-    private boolean rampOpen = false;
+    private boolean rampOpen = false; // The ramps state (open (true) or closed (false)
 
     @Override
     public void openRamp() {

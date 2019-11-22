@@ -1,6 +1,10 @@
 package Interfaces;
 
-public interface IMovable {
+/**
+ * @author SM
+ * Interface for objects that is movable
+ */
+public interface IMovable extends IPositionable {
     /**
      * Possible directions for object
      */
@@ -22,9 +26,4 @@ public interface IMovable {
      * Makes object turn right depending on current direction
      */
     void turnRight();
-
-    double getX();
-    void setX(double x);
-    double getY();
-    void setY(double y);
 }

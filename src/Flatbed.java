@@ -6,9 +6,13 @@ import Interfaces.IFlatbed;
  */
 public class Flatbed implements IFlatbed {
 
-    private int flatbedAngle;
-    private final int maxFlatbedAngle;
+    private int flatbedAngle; // Angle of flatbed
+    private final int maxFlatbedAngle; // Max angle of flatbed
 
+    /**
+     * Constructor for Flatbed class
+     * @param maxFlatbedAngle Max angle the flatbed can have
+     */
     public Flatbed(int maxFlatbedAngle) {
         this.maxFlatbedAngle = maxFlatbedAngle;
     }

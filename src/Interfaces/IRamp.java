@@ -5,9 +5,20 @@ package Interfaces;
  */
 public interface IRamp {
 
+    /**
+     * Opens ramp
+     */
     void openRamp();
+
+    /**
+     * Closes ramp
+     */
     void closeRamp();
 
+    /**
+     * Is ramp open?
+     * @return Returns true if ramp is open
+     */
     boolean isRampOpen();
     void setRampOpen(boolean open);
 }

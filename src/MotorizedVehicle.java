@@ -1,30 +1,29 @@
-import Interfaces.IMovable;
-
+import Interfaces.ISizeable;
 import java.awt.*;
 
 /**
  * @author SM
- * Abstract superclass to all MotorVehicle subobjects
+ * Abstract superclass to all MotorVehicle subobjects. Extends Movable and Implements ISizeable
  */
-public abstract class MotorizedVehicle implements IMovable {
+public abstract class MotorizedVehicle extends Movable implements ISizeable {
     private final int nrDoors; // Number of doors on the vehicle
     private final double enginePower; // Engine power of the vehicle
-    private double currentSpeed; // The current speed of the vehicle
     private Color color; // Color of the vehicle
     private final String modelName; // The vehicle model name
-    private Direction currentDirection = Direction.NORTH; // Direction the vehicle is facing
-    private double x; // X position of vehicle
-    private double y; // Y position of vehicle
+
     private double widthMeter; // Width of vehicle in meters
     private double heightMeter; // Height of vehicle in meters
     private double lengthMeter; // Length of vehicle meters
 
     /**
      * Constructor for MotorizedVehicle class
-     * @param nrDoors Number of doors on a Car
-     * @param enginePower Engine power of a Car
-     * @param color Color of a Car
-     * @param modelName Model name of a Car
+     * @param nrDoors Number of doors on a vehicle
+     * @param enginePower Engine power of a vehicle
+     * @param color Color of a vehicle
+     * @param modelName Model name of a vehicle
+     * @param width Width in meters of vehicle
+     * @param height Height in meters of vehicle
+     * @param length Length in meters of vehicle
      */
     public MotorizedVehicle(int nrDoors, double enginePower, Color color, String modelName, double width, double height, double length) {
         this.nrDoors = nrDoors;
@@ -35,89 +34,6 @@ public abstract class MotorizedVehicle implements IMovable {
         heightMeter = height;
         lengthMeter = length;
         stopEngine();
-    }
-
-    /**
-     * Moves the MotorizedVehicle depending on the direction it's facing. Inherits from Interfaces.IMovable interface
-     */
-    @Override
-    public void move() {
-        switch (currentDirection){
-            case NORTH:
-                y += currentSpeed;
-                break;
-            case EAST:
-                x += currentSpeed;
-                break;
-            case SOUTH:
-                y -= currentSpeed;
-                break;
-            case WEST:
-                x -= currentSpeed;
-                break;
-        }
-    }
-
-    /**
-     * Turns the car to the left depending on it's current direction. Inherits from Movable interface
-     */
-    @Override
-    public void turnLeft() {
-        switch (currentDirection) {
-            case NORTH:
-                currentDirection = Direction.WEST;
-                break;
-            case EAST:
-                currentDirection = Direction.NORTH;
-                break;
-            case SOUTH:
-                currentDirection = Direction.EAST;
-                break;
-            case WEST:
-                currentDirection = Direction.SOUTH;
-                break;
-        }
-    }
-
-    /**
-     * Turns the car to the right depending on it's current direction. Inherits from Movable interface
-     */
-    @Override
-    public void turnRight() {
-        switch (getCurrentDirection()) {
-            case NORTH:
-                currentDirection = Direction.EAST;
-                break;
-            case EAST:
-                currentDirection = Direction.SOUTH;
-                break;
-            case SOUTH:
-                currentDirection = Direction.WEST;
-                break;
-            case WEST:
-                currentDirection = Direction.NORTH;
-                break;
-        }
-    }
-
-    @Override
-    public double getX() {
-        return x;
-    }
-
-    @Override
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    @Override
-    public double getY() {
-        return y;
-    }
-
-    @Override
-    public void setY(double y) {
-        this.y = y;
     }
 
     /**
@@ -156,6 +72,10 @@ public abstract class MotorizedVehicle implements IMovable {
      */
     private void decrementSpeed(double amount){ setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount); }
 
+    /**
+     * Gets the model name of vehicle
+     * @return Returns model name
+     */
     public String getModelName() {
         return modelName;
     }
@@ -177,15 +97,10 @@ public abstract class MotorizedVehicle implements IMovable {
     }
 
     /**
-     * Gets current speed of car
-     * @return Current speed of car
-     */
-    public double getCurrentSpeed() { return currentSpeed; }
-
-    /**
      * Sets current speed of car to a valid value in the interval [0, enginePower]
      * @param speed Sets current speed of car
      */
+    @Override
     public void setCurrentSpeed(double speed) {
         speed = Math.min(speed, enginePower);
         currentSpeed = Math.max(speed, 0);
@@ -220,20 +135,6 @@ public abstract class MotorizedVehicle implements IMovable {
     public void stopEngine(){
         currentSpeed = 0;
     }
-
-    /**
-     * Returns current direction of car
-     * @return Current direction (the direction the car is currently facing)
-     */
-    public Direction getCurrentDirection() { return currentDirection; }
-
-    /**
-     * Sets current direction of car to a valid direction
-     * @param currentDirection Current direction of car to set
-     */
-    public void setCurrentDirection(Direction currentDirection) { this.currentDirection = currentDirection; }
-
-
 
     public double getWidth() {
         return widthMeter;

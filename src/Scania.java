@@ -4,7 +4,7 @@ import java.awt.*;
 
 /**
  * @author SM
- * Subclass of Truck. Represents a Truck of model Scania that has a flatbed (implements Interfaces.IFlatbed)
+ * Subclass of Truck. Represents a Truck of model Scania that has a flatbed (implements IFlatbed)
  */
 public class Scania extends Truck implements IFlatbed {
 
