@@ -23,13 +23,13 @@ public class CarWorkshopTest {
         carWorkshop.loadTransport(saab);
         carWorkshop.loadTransport(saab);
         carWorkshop.loadTransport(saab);
-        assertEquals(false, carWorkshop.loadTransport(saab));
+        assertEquals(5, carWorkshop.getLoadedTransport().size());
         assertEquals(5, carWorkshop.getLoadedTransport().size());
 
 
         // ---These should give compile errors when uncommented--- //
-        //volvoWorkshop.loadTransport(saab, 0, 0);
-        //saabWorkshop.loadTransport(volvo, 0, 0);
+        //volvoWorkshop.loadTransport(saab);
+        //saabWorkshop.loadTransport(volvo);
 
     }
 

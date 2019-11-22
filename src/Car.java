@@ -1,10 +1,12 @@
+import Interfaces.ITransportable;
+
 import java.awt.*;
 
 /**
  * @author SM
  * Abstract superclass to all Car subobjects
  */
-public abstract class Car extends MotorizedVehicle {
+public abstract class Car extends MotorizedVehicle implements ITransportable {
 
     /**
      * Constructor for Car class

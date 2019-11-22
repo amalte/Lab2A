@@ -4,7 +4,7 @@ package Interfaces;
  * @author SM
  * Interface for objects that have a flatbed
  */
-public interface IFlatbed {
+public interface IFlatbed extends IRamp{
 
     /**
      * Lowers flatbed

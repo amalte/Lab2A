@@ -1,4 +1,5 @@
 import Interfaces.IRamp;
+import Interfaces.ITransportable;
 import Interfaces.ITransportableHolder;
 
 import java.awt.*;
@@ -8,7 +9,7 @@ import java.util.Deque;
  * @author SM
  * Subclass of Truck. Represents a truck of model VolvoFH16 that has a ramp and can hold Transportables (implements IRamp and ITransportableHolder)
  */
-public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder<Car> {
+public class VolvoFH16 extends Truck implements ITransportableHolder<Car> {
 
     /**
      * This truck has a ramp and can hold Transportables (implements Interfaces.IRamp and ITransportableHolder)
@@ -25,42 +26,36 @@ public class VolvoFH16 extends Truck implements IRamp, ITransportableHolder<Car>
         ramp = new Ramp();
     }
 
-    @Override
     public void openRamp() {
         if(!isMoving()) {
             ramp.openRamp();
         }
     }
 
-    @Override
     public void closeRamp() {
         ramp.closeRamp();
     }
 
-    @Override
     public boolean isRampOpen() {
         return ramp.isRampOpen();
     }
 
-    @Override
     public void setRampOpen(boolean open) {
         ramp.setRampOpen(open);
     }
 
     @Override
-    public boolean loadTransport(Car t) {
-        if(!isMoving() && isRampOpen()) {
-            return transportableHolder.loadTransport(t);
+    public void loadTransport(Car t) {
+        if(!isMoving() && isRampOpen() && transportableHolder.isTransportLoadable(t)) {
+            transportableHolder.loadTransport(t);
         }
-        return false;
     }
 
     @Override
-    public Car dropTransport() {
+    public void dropTransport() {
         if(!isMoving() && isRampOpen()) {
-            return  (Car) transportableHolder.dropTransport();
+            transportableHolder.dropTransport();
         }
-        return null;
     }
 
     @Override

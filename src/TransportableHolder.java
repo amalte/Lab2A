@@ -1,5 +1,5 @@
 import Interfaces.IPositionable;
-import Interfaces.ISizeable;
+import Interfaces.ITransportable;
 import Interfaces.ITransportableHolder;
 
 import java.util.ArrayDeque;
@@ -9,7 +9,7 @@ import java.util.Deque;
  * @author SM
  * Represents a TransportableHolder object (an object that can hold objects)
  */
-public class TransportableHolder<T extends IPositionable & ISizeable> implements ITransportableHolder<T>, IPositionable {
+public class TransportableHolder<T extends ITransportable> implements ITransportableHolder<T>, IPositionable {
 
     private int maxLoad; // Max amount of object that can be loaded
     private double maxWidthMeter; // Max width in meters of object to be transported
@@ -41,25 +41,19 @@ public class TransportableHolder<T extends IPositionable & ISizeable> implements
     }
 
     @Override
-    public boolean loadTransport(T transport) {
-        if(isTransportLoadable(transport)) {
+    public void loadTransport(T transport) {
             loadedTransport.push(transport);
             transport.setX(x);
             transport.setY(y);
-            return true;
-        }
-        return false;
     }
 
     @Override
-    public T dropTransport() {
+    public void dropTransport() {
        if(isTransportDroppable()) {
-           T t = loadedTransport.pop();
+           ITransportable t = loadedTransport.pop();
            t.setX(x + loadAndDropDistanceMeter);
            t.setY(y + loadAndDropDistanceMeter);
-           return t;
        }
-       return null;
     }
 
     /**
@@ -70,7 +64,7 @@ public class TransportableHolder<T extends IPositionable & ISizeable> implements
     public void updatePosition(double x, double y) {
         this.x = x;
         this.y = y;
-        for(T t : loadedTransport) {
+        for(ITransportable t : loadedTransport) {
             t.setX(x);
             t.setY(y);
         }
@@ -91,12 +85,16 @@ public class TransportableHolder<T extends IPositionable & ISizeable> implements
         return loadedTransport;
     }
 
+    public double getLoadAndDropDistanceMeter() {
+        return loadAndDropDistanceMeter;
+    }
+
     /**
      * Checks if the object can be loaded
      * @param transport Object to be loaded
      * @return Returns true if object can be loaded and false if it cannot
      */
-    private boolean isTransportLoadable(T transport) {
+    protected boolean isTransportLoadable(T transport) {
         return loadedTransport.size() < maxLoad
                 && transportCloseEnough(transport)
                 && !transportTooBig(transport);
@@ -106,7 +104,7 @@ public class TransportableHolder<T extends IPositionable & ISizeable> implements
      * Checks if an object which is already loaded can be dropped
      * @return Returns true if object can be dropped
      */
-    private boolean isTransportDroppable() {
+    protected boolean isTransportDroppable() {
         return loadedTransport.size() != 0;
     }
 
@@ -115,7 +113,7 @@ public class TransportableHolder<T extends IPositionable & ISizeable> implements
      * @param transport Object to load
      * @return Returns true if it is close enough to be loaded and false if it is not.
      */
-    private boolean transportCloseEnough(T transport) {
+    protected boolean transportCloseEnough(T transport) {
         return ((Math.abs(x - transport.getX())) < loadAndDropDistanceMeter) && ((Math.abs(y - transport.getY())) < loadAndDropDistanceMeter);
     }
 
@@ -124,7 +122,7 @@ public class TransportableHolder<T extends IPositionable & ISizeable> implements
      * @param transport Object to be loaded
      * @return Returns true if object is too big to be loaded and false if it can be loaded
      */
-    private boolean transportTooBig(T transport) {
+    protected boolean transportTooBig(T transport) {
         return (transport.getWidth() > maxWidthMeter) || (transport.getHeight() > maxHeightMeter) || (transport.getLength() > maxLengthMeter);
     }
 

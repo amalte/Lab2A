@@ -2,69 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a53155-a816-4e78-a8f4-a6f56ba08ad0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Interfaces/IPositionable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interfaces/ISizeable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Movable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarFerry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/ITransportable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/Car.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/Car.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/Movable.Direction.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/Movable.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/Movable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/MovableTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/Saab95.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/Saab95.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/Volvo240.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/Volvo240.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/member-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/package-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/package-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/external/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-3.4.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-3.4.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.structure.css" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.structure.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.structure.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jquery-ui.structure.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jszip-utils/dist/jszip-utils-ie.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jszip-utils/dist/jszip-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jszip-utils/dist/jszip-utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jszip-utils/dist/jszip-utils.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jszip/dist/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jszip/dist/jszip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/script-dir/jszip/dist/jszip.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/script-dir/jszip/dist/jszip.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1B.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1B.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/CarWorkshopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/CarWorkshopTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/VolvoFH16Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/VolvoFH16Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Car.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1B/CarWorkshop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/CarWorkshop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Flatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Flatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IMovable$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IMovable$Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IMovable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IMovable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ITransportable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IFlatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IFlatbed.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ITransportableHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ITransportableHolder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Scania.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/TransportableHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/TransportableHolder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Truck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1B/VolvoFH16.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/VolvoFH16.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Lab1B/CarWorkshopTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Lab1B/CarWorkshopTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Lab1B/VolvoFH16Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Lab1B/VolvoFH16Test.class" afterDir="false" />
@@ -72,17 +23,9 @@
       <change beforePath="$PROJECT_DIR$/src/CarWorkshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarWorkshop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Flatbed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interfaces/IFlatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/IFlatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/IMovable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/IMovable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/IRamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/IRamp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/ITransportable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/ITransporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/ITransportableHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MotorizedVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MotorizedVehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ramp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ramp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Saab95.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/ITransportableHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/ITransportableHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportableHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Volvo240.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransportableHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportableHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/VolvoFH16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VolvoFH16.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

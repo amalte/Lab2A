@@ -28,11 +28,12 @@ public class VolvoFH16Test {
     public void loadTransport() {
         resetTruck();
         truckTransporter.openRamp();
-        assertEquals(true, truckTransporter.loadTransport(volvo));
+        truckTransporter.loadTransport(volvo);
+        assertEquals(1, truckTransporter.getLoadedTransport().size());
 
         resetTruck();
         truckTransporter.closeRamp();
-        assertEquals(false, truckTransporter.loadTransport(volvo));
+        assertEquals(0, truckTransporter.getLoadedTransport().size());
 
         resetTruck();
         truckTransporter.openRamp();
@@ -41,7 +42,7 @@ public class VolvoFH16Test {
         truckTransporter.loadTransport(saab);
         truckTransporter.loadTransport(saab);
         truckTransporter.loadTransport(saab);
-        assertEquals(false, truckTransporter.loadTransport(saab));
+        assertEquals(5, truckTransporter.getLoadedTransport().size());
     }
 
     @Test
@@ -49,13 +50,13 @@ public class VolvoFH16Test {
         resetTruck();
         truckTransporter.openRamp();
         truckTransporter.loadTransport(saab);
-        assertEquals(saab, truckTransporter.dropTransport());
+        assertEquals(1, truckTransporter.getLoadedTransport().size());
 
         resetTruck();
         truckTransporter.openRamp();
         truckTransporter.loadTransport(saab);
         truckTransporter.closeRamp();
-        assertEquals(null, truckTransporter.dropTransport());
+        assertEquals(1, truckTransporter.getLoadedTransport().size());
     }
 
     @Test

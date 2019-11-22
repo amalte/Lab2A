@@ -43,15 +43,14 @@ public class CarWorkshop<T extends Car> implements ITransportableHolder<T>, IPos
     }
 
     @Override
-    public boolean loadTransport(T transport) {
-            transport.setX(x);
-            transport.setY(y);
-            return transportableHolder.loadTransport(transport);
+    public void loadTransport(T transport) {
+        if(transportableHolder.isTransportLoadable(transport))
+            transportableHolder.loadTransport(transport);
     }
 
     @Override
-    public T dropTransport() {
-        return (T) transportableHolder.dropTransport();
+    public void dropTransport() {
+        transportableHolder.dropTransport();
     }
 
     @Override
