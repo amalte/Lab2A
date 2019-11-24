@@ -66,6 +66,5 @@ public class ScaniaTest {
         scania.setFlatbedAngle(5);
         assertEquals(50, scania.getCurrentSpeed(), 0.0001);
         assertEquals(0, scania.getFlatbedAngle());
-
     }
 }

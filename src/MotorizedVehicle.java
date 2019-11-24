@@ -7,7 +7,7 @@ import java.awt.*;
  */
 public abstract class MotorizedVehicle extends Movable implements ISizeable {
     private final int nrDoors; // Number of doors on the vehicle
-    private final double enginePower; // Engine power of the vehicle
+    private double enginePower; // Engine power of the vehicle
     private Color color; // Color of the vehicle
     private final String modelName; // The vehicle model name
 
@@ -21,18 +21,18 @@ public abstract class MotorizedVehicle extends Movable implements ISizeable {
      * @param enginePower Engine power of a vehicle
      * @param color Color of a vehicle
      * @param modelName Model name of a vehicle
-     * @param width Width in meters of vehicle
-     * @param height Height in meters of vehicle
-     * @param length Length in meters of vehicle
+     * @param widthMeter Width in meters of vehicle
+     * @param heightMeter Height in meters of vehicle
+     * @param lengthMeter Length in meters of vehicle
      */
-    public MotorizedVehicle(int nrDoors, double enginePower, Color color, String modelName, double width, double height, double length) {
+    public MotorizedVehicle(int nrDoors, double enginePower, Color color, String modelName, double widthMeter, double heightMeter, double lengthMeter) {
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
         this.modelName = modelName;
-        widthMeter = width;
-        heightMeter = height;
-        lengthMeter = length;
+        this.widthMeter = widthMeter;
+        this.heightMeter = heightMeter;
+        this.lengthMeter = lengthMeter;
         stopEngine();
     }
 
@@ -56,7 +56,7 @@ public abstract class MotorizedVehicle extends Movable implements ISizeable {
 
     /**
      * Returns speed factor of car
-     * @return Returns speed factor (is overridden in subclasses)
+     * @return Returns speed factor (can be overridden in subclasses)
      */
     protected double speedFactor() { return 1; }
 
@@ -71,6 +71,28 @@ public abstract class MotorizedVehicle extends Movable implements ISizeable {
      * @param amount Amount the speed should decrement with
      */
     private void decrementSpeed(double amount){ setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount); }
+
+    /**
+     * Starts engine by setting currentSpeed to 0.1
+     */
+    public void startEngine(){
+        currentSpeed = 0.1;
+    }
+
+    /**
+     * Stops engine by setting currentSpeed to 0
+     */
+    public void stopEngine(){
+        currentSpeed = 0;
+    }
+
+    /**
+     * Returns if a Car object is moving or not
+     * @return Returns true or false depending on if a Car object is moving or not
+     */
+    public boolean isMoving() {
+        return getCurrentSpeed() != 0;
+    }
 
     /**
      * Gets the model name of vehicle
@@ -122,20 +144,6 @@ public abstract class MotorizedVehicle extends Movable implements ISizeable {
         color = clr;
     }
 
-    /**
-     * Starts engine by setting currentSpeed to 0.1
-     */
-    public void startEngine(){
-        currentSpeed = 0.1;
-    }
-
-    /**
-     * Stops engine by setting currentSpeed to 0
-     */
-    public void stopEngine(){
-        currentSpeed = 0;
-    }
-
     public double getWidth() {
         return widthMeter;
     }
@@ -158,13 +166,5 @@ public abstract class MotorizedVehicle extends Movable implements ISizeable {
 
     public void setLength(double length) {
         this.lengthMeter = length;
-    }
-
-    /**
-     * Returns if a Car object is moving or not
-     * @return Returns true or false depending on if a Car object is moving or not
-     */
-    public boolean isMoving() {
-        return getCurrentSpeed() != 0;
     }
 }

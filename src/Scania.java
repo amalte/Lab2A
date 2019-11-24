@@ -29,16 +29,6 @@ public class Scania extends Truck {
         }
     }
 
-    public int getFlatbedAngle() {
-        return flatbed.getFlatbedAngle();
-    }
-
-    public void setFlatbedAngle(int angle) {
-        if(!isMoving()) {
-            flatbed.setFlatbedAngle(angle);
-        }
-    }
-
     public int getMaxFlatbedAngle() {
         return flatbed.getMaxFlatbedAngle();
     }
@@ -51,6 +41,16 @@ public class Scania extends Truck {
     public void gas(double amount) {
         if(flatbedHasNoAngle()) {
             super.gas(amount);
+        }
+    }
+
+    public int getFlatbedAngle() {
+        return flatbed.getFlatbedAngle();
+    }
+
+    public void setFlatbedAngle(int angle) {
+        if(!isMoving()) {
+            flatbed.setFlatbedAngle(angle);
         }
     }
 

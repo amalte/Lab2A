@@ -12,12 +12,12 @@ public abstract class Truck extends MotorizedVehicle {
      * @param enginePower Engine power of a vehicle
      * @param color Color of a vehicle
      * @param modelName Model name of a vehicle
-     * @param width Width in meters of vehicle
-     * @param height Height in meters of vehicle
-     * @param length Length in meters of vehicle
+     * @param widthMeter Width in meters of vehicle
+     * @param heightMeter Height in meters of vehicle
+     * @param lengthMeter Length in meters of vehicle
      */
-    public Truck(int nrDoors, double enginePower, Color color, String modelName, double width, double height, double length) {
-        super(nrDoors, enginePower, color, modelName, width, height, length);
+    public Truck(int nrDoors, double enginePower, Color color, String modelName, double widthMeter, double heightMeter, double lengthMeter) {
+        super(nrDoors, enginePower, color, modelName, widthMeter, heightMeter, lengthMeter);
         stopEngine();
     }
 }

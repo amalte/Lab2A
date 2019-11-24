@@ -1,4 +1,5 @@
 import Interfaces.IPositionable;
+import Interfaces.ITransportable;
 import Interfaces.ITransportableHolder;
 import java.util.Deque;
 
@@ -15,31 +16,16 @@ public class CarWorkshop<T extends Car> implements ITransportableHolder<T>, IPos
     /**
      * Constructor for CarWorkshop
      * @param maxLoad Max amount of Car objects to be loaded
-     * @param maxWidth Max width of Car objects to be loaded
-     * @param maxHeight Max height of Car objects to be loaded
-     * @param maxLength Max length of Car objects to be loaded
+     * @param maxTransportWidthMeter Max width of Car objects to be loaded
+     * @param maxTransportHeightMeter Max height of Car objects to be loaded
+     * @param maxTransportLengthMeter Max length of Car objects to be loaded
      * @param x X position for the workshop
      * @param y Y position for the workshop
      */
-    public CarWorkshop(int maxLoad, double maxWidth, double maxHeight, double maxLength, double x, double y) {
+    public CarWorkshop(int maxLoad, int loadAndDropDistanceMeter, double maxTransportWidthMeter, double maxTransportHeightMeter, double maxTransportLengthMeter, double x, double y) {
         this.x = x;
         this.y = y;
-        transportableHolder = new TransportableHolder<T>(maxLoad, maxWidth, maxHeight, maxLength, 5, x, y);
-    }
-
-    @Override
-    public int getMaxLoad() {
-        return transportableHolder.getMaxLoad();
-    }
-
-    @Override
-    public void setMaxLoad(int maxLoad) {
-        transportableHolder.setMaxLoad(maxLoad);
-    }
-
-    @Override
-    public Deque<T> getLoadedTransport() {
-        return transportableHolder.getLoadedTransport();
+        transportableHolder = new TransportableHolder<T>(maxLoad, loadAndDropDistanceMeter, maxTransportWidthMeter, maxTransportHeightMeter, maxTransportLengthMeter, x, y);
     }
 
     @Override
@@ -49,8 +35,13 @@ public class CarWorkshop<T extends Car> implements ITransportableHolder<T>, IPos
     }
 
     @Override
-    public void dropTransport() {
-        transportableHolder.dropTransport();
+    public ITransportable dropTransport() {
+        return transportableHolder.dropTransport();
+    }
+
+    @Override
+    public Deque<T> getLoadedTransport() {
+        return transportableHolder.getLoadedTransport();
     }
 
     @Override

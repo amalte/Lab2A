@@ -1,5 +1,4 @@
 package Interfaces;
-import java.awt.datatransfer.Transferable;
 import java.util.Deque;
 
 /**
@@ -7,15 +6,6 @@ import java.util.Deque;
  * Interface for objects that have a TransportableHolder
  */
 public interface ITransportableHolder<T extends ITransportable> {
-    int getMaxLoad();
-    void setMaxLoad(int maxLoad);
-
-    /**
-     * Stack for all loaded transports
-     * @return Returns loaded transports
-     */
-    Deque<T> getLoadedTransport();
-
     /**
      * Loads given object onto the TransportableHolder
      * @param transport The object to be loaded
@@ -24,8 +14,14 @@ public interface ITransportableHolder<T extends ITransportable> {
     void loadTransport(T transport);
 
     /**
-     * Drops most recently object to be loaded
-     * @return Returns the object that was most recently loaded
+     * Drops a transport
+     * @return Returns the dropped transport
      */
-    void dropTransport();
+    ITransportable dropTransport();
+
+    /**
+     * Stack for all loaded transports
+     * @return Returns loaded transports
+     */
+    Deque<T> getLoadedTransport();
 }

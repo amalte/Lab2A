@@ -32,7 +32,7 @@ public class Saab95 extends Car {
 
     /**
      * Calculates the speed factor (overrides method from MotorizedVehicle)
-     * @return The speed factor (factor the speed is changed by)
+     * @return Returns the speed factor (factor the speed is changed by)
      */
     @Override
     protected double speedFactor(){

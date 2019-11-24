@@ -74,26 +74,6 @@ public abstract class Movable implements IMovable {
         }
     }
 
-    @Override
-    public double getX() {
-        return x;
-    }
-
-    @Override
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    @Override
-    public double getY() {
-        return y;
-    }
-
-    @Override
-    public void setY(double y) {
-        this.y = y;
-    }
-
     /**
      * Returns current direction of object
      * @return Current direction (the direction the object is currently facing)
@@ -114,5 +94,25 @@ public abstract class Movable implements IMovable {
 
     public void setCurrentSpeed(double speed) {
         currentSpeed = speed;
+    }
+
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
+
+    @Override
+    public void setY(double y) {
+        this.y = y;
     }
 }

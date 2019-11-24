@@ -11,49 +11,33 @@ import java.util.Deque;
  */
 public class TransportableHolder<T extends ITransportable> implements ITransportableHolder<T>, IPositionable {
 
-    private int maxLoad; // Max amount of object that can be loaded
-    private double maxWidthMeter; // Max width in meters of object to be transported
-    private double maxHeightMeter; // Max height in meters of object to be transported
-    private double maxLengthMeter; // Max length in meters of object to be transported
+    private final int maxLoad; // Max amount of object that can be loaded
+    private final double maxTransportWidthMeter; // Max width in meters of object to be transported
+    private final double maxTransportHeightMeter; // Max height in meters of object to be transported
+    private final double maxTransportLengthMeter; // Max length in meters of object to be transported
     protected Deque<T> loadedTransport = new ArrayDeque<>(); // Stack of all loaded objects
-    private double loadAndDropDistanceMeter; // Distance in meters that an object can be loaded, and will drop from current position
+    private final double loadAndDropDistanceMeter; // Distance in meters that an object can be loaded, and will drop from current position
     private double x; // X Position of the TransportableHolder
     private double y; // Y Position of the TransportableHolder
 
     /**
      * Constructor for TransportableHolder class
      * @param maxLoad Max amount of object that can be loaded
-     * @param maxWidth Max width in meters of object to be transported
-     * @param maxHeight Max height in meters of object to be transported
-     * @param maxLength Max length in meters of object to be transported
-     * @param loadAndDropDistance // Distance in meters that an object can be loaded, and will drop from current position
+     * @param maxTransportWidthMeter Max width in meters of object to be transported
+     * @param maxTransportHeightMeter Max height in meters of object to be transported
+     * @param maxTransportLengthMeter Max length in meters of object to be transported
+     * @param loadAndDropDistanceMeter // Distance in meters that an object can be loaded, and will drop from current position
      * @param x // X Position of the TransportableHolder
      * @param y // Y Position of the TransportableHolder
      */
-    public TransportableHolder(int maxLoad, double maxWidth, double maxHeight, double maxLength, double loadAndDropDistance, double x, double y) {
+    public TransportableHolder(int maxLoad, double loadAndDropDistanceMeter, double maxTransportWidthMeter, double maxTransportHeightMeter, double maxTransportLengthMeter, double x, double y) {
         this.maxLoad = maxLoad;
-        maxWidthMeter = maxWidth;
-        maxHeightMeter = maxHeight;
-        maxLengthMeter = maxLength;
-        this.loadAndDropDistanceMeter = loadAndDropDistance;
+        this.loadAndDropDistanceMeter = loadAndDropDistanceMeter;
+        this.maxTransportWidthMeter = maxTransportWidthMeter;
+        this.maxTransportHeightMeter = maxTransportHeightMeter;
+        this.maxTransportLengthMeter = maxTransportLengthMeter;
         this.x = x;
         this.y = y;
-    }
-
-    @Override
-    public void loadTransport(T transport) {
-            loadedTransport.push(transport);
-            transport.setX(x);
-            transport.setY(y);
-    }
-
-    @Override
-    public void dropTransport() {
-       if(isTransportDroppable()) {
-           ITransportable t = loadedTransport.pop();
-           t.setX(x + loadAndDropDistanceMeter);
-           t.setY(y + loadAndDropDistanceMeter);
-       }
     }
 
     /**
@@ -70,25 +54,6 @@ public class TransportableHolder<T extends ITransportable> implements ITransport
         }
     }
 
-    @Override
-    public int getMaxLoad() {
-        return maxLoad;
-    }
-
-    @Override
-    public void setMaxLoad(int maxLoad) {
-        this.maxLoad = maxLoad;
-    }
-
-    @Override
-    public Deque<T> getLoadedTransport() {
-        return loadedTransport;
-    }
-
-    public double getLoadAndDropDistanceMeter() {
-        return loadAndDropDistanceMeter;
-    }
-
     /**
      * Checks if the object can be loaded
      * @param transport Object to be loaded
@@ -97,7 +62,8 @@ public class TransportableHolder<T extends ITransportable> implements ITransport
     protected boolean isTransportLoadable(T transport) {
         return loadedTransport.size() < maxLoad
                 && transportCloseEnough(transport)
-                && !transportTooBig(transport);
+                && !transportTooBig(transport)
+                && !transport.isLoaded();
     }
 
     /**
@@ -123,7 +89,49 @@ public class TransportableHolder<T extends ITransportable> implements ITransport
      * @return Returns true if object is too big to be loaded and false if it can be loaded
      */
     protected boolean transportTooBig(T transport) {
-        return (transport.getWidth() > maxWidthMeter) || (transport.getHeight() > maxHeightMeter) || (transport.getLength() > maxLengthMeter);
+        return (transport.getWidth() > maxTransportWidthMeter) || (transport.getHeight() > maxTransportHeightMeter) || (transport.getLength() > maxTransportLengthMeter);
+    }
+
+    @Override
+    public void loadTransport(T transport) {
+        loadedTransport.push(transport);
+        transport.setX(x);
+        transport.setY(y);
+        transport.setLoaded(true);
+    }
+
+    /**
+     * Drops most recently loaded object (last object to be loaded)
+     * @return Returns most recently loaded object (last object to be loaded)
+     */
+    @Override
+    public ITransportable dropTransport() {
+        T transport = loadedTransport.pop();
+        transport.setX(x + loadAndDropDistanceMeter);
+        transport.setY(y + loadAndDropDistanceMeter);
+        transport.setLoaded(false);
+        return transport;
+    }
+
+    public double getMaxTransportWidthMeter() {
+        return maxTransportWidthMeter;
+    }
+
+    public double getMaxTransportHeightMeter() {
+        return maxTransportHeightMeter;
+    }
+
+    public double getMaxTransportLengthMeter() {
+        return maxTransportLengthMeter;
+    }
+
+    public double getLoadAndDropDistanceMeter() {
+        return loadAndDropDistanceMeter;
+    }
+
+    @Override
+    public Deque<T> getLoadedTransport() {
+        return loadedTransport;
     }
 
     @Override
@@ -144,5 +152,9 @@ public class TransportableHolder<T extends ITransportable> implements ITransport
     @Override
     public void setY(double y) {
         this.y = y;
+    }
+
+    public int getMaxLoad() {
+        return maxLoad;
     }
 }

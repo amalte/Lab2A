@@ -9,11 +9,11 @@ import java.util.Deque;
  */
 public class CarFerry extends MotorizedVehicle implements ITransportableHolder<Car> {
 
-    Ramp ramp;
     TransportableHolder transportableHolder;
+    Ramp ramp;
 
     /**
-     * Constructor for MotorizedVehicle class
+     * Constructor for CarFerry class
      *
      * @param nrDoors     Number of doors on a vehicle
      * @param enginePower Engine power of a vehicle
@@ -23,10 +23,10 @@ public class CarFerry extends MotorizedVehicle implements ITransportableHolder<C
      * @param height      Height in meters of vehicle
      * @param length      Length in meters of vehicle
      */
-    public CarFerry(int nrDoors, double enginePower, Color color, String modelName, double width, double height, double length) {
+    public CarFerry(int maxLoad, int loadAndDropDistanceMeter, double maxTransportWidthMeter, double maxTransportHeightMeter, double maxTransportLengthMeter, int nrDoors, double enginePower, Color color, String modelName, double width, double height, double length) {
         super(nrDoors, enginePower, color, modelName, width, height, length);
+        transportableHolder = new TransportableHolder<Car>(maxLoad, loadAndDropDistanceMeter, maxTransportWidthMeter,maxTransportHeightMeter, maxTransportLengthMeter, getX(), getY());
         ramp = new Ramp();
-        transportableHolder = new TransportableHolder<Car>(40, 2,2, 5, 5, getX(), getY());
     }
 
     public void openRamp() {
@@ -41,25 +41,6 @@ public class CarFerry extends MotorizedVehicle implements ITransportableHolder<C
         return ramp.isRampOpen();
     }
 
-    public void setRampOpen(boolean open) {
-        ramp.setRampOpen(open);
-    }
-
-    @Override
-    public int getMaxLoad() {
-        return transportableHolder.getMaxLoad();
-    }
-
-    @Override
-    public void setMaxLoad(int maxLoad) {
-        transportableHolder.setMaxLoad(maxLoad);
-    }
-
-    @Override
-    public Deque<Car> getLoadedTransport() {
-        return transportableHolder.getLoadedTransport();
-    }
-
     @Override
     public void loadTransport(Car transport) {
         if(isRampOpen() && transportableHolder.isTransportLoadable(transport)) {
@@ -67,14 +48,24 @@ public class CarFerry extends MotorizedVehicle implements ITransportableHolder<C
         }
     }
 
+    /**
+     * Drops first loaded object
+     * @return Returns first loaded object
+     */
     @Override
-    public void dropTransport() {
+    public ITransportable dropTransport() {
         if(isRampOpen() && transportableHolder.isTransportDroppable())
         {
-            /*ITransportable c = transportableHolder.getLoadedTransport().getLast();
-            transportableHolder.loadedTransport.removeLast();
-            c.setX(getX() + transportableHolder.getLoadAndDropDistanceMeter());
-            c.setY(getY() + transportableHolder.getLoadAndDropDistanceMeter());*/
+            ITransportable t = getLoadedTransport().getLast(); // (.getLast() because it is reverse in a Deque)
+            t.setX(x + transportableHolder.getLoadAndDropDistanceMeter());
+            t.setY(y + transportableHolder.getLoadAndDropDistanceMeter());
+            return t;
         }
+        return null;
+    }
+
+    @Override
+    public Deque<Car> getLoadedTransport() {
+        return transportableHolder.getLoadedTransport();
     }
 }
