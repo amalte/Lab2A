@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a53155-a816-4e78-a8f4-a6f56ba08ad0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CarFerry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interfaces/ITransportable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/CarWorkshopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/CarWorkshopTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/VolvoFH16Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/VolvoFH16Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/CarWorkshop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/CarWorkshop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Flatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Flatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IFlatbed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IFlatbed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ITransportableHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ITransportableHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Scania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/TransportableHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/TransportableHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Truck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/Truck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/VolvoFH16.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1B/VolvoFH16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/CarWorkshopTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Lab1B/CarWorkshopTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/VolvoFH16Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Lab1B/VolvoFH16Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarWorkshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarWorkshop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Flatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/IFlatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/IFlatbed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/ITransportableHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/ITransportableHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scania.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransportableHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportableHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VolvoFH16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/VolvoFH16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab1B.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2A.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab1del2PM.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +42,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -92,13 +71,13 @@
   </component>
   <component name="RunManager" selected="JUnit.All in Lab1B">
     <configuration default="true" type="Application" factoryName="Application">
-      <module name="Lab1B" />
+      <module name="Lab2A" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="All in Lab1B (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab1B" />
+      <module name="Lab2A" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
@@ -106,7 +85,7 @@
       </method>
     </configuration>
     <configuration name="All in Lab1B" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab1B" />
+      <module name="Lab2A" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
@@ -114,7 +93,7 @@
       </method>
     </configuration>
     <configuration name="CarWorkshopTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab1B" />
+      <module name="Lab2A" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CarWorkshopTest" />
       <option name="TEST_OBJECT" value="class" />
@@ -123,7 +102,7 @@
       </method>
     </configuration>
     <configuration name="ScaniaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab1B" />
+      <module name="Lab2A" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ScaniaTest" />
       <option name="TEST_OBJECT" value="class" />
@@ -132,11 +111,58 @@
       </method>
     </configuration>
     <configuration name="VolvoFH16Test.notFull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab1B" />
+      <module name="Lab2A" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="VolvoFH16Test" />
       <option name="METHOD_NAME" value="notFull" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="Lab2A" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="Lab2A" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
