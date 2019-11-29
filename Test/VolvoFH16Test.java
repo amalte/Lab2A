@@ -1,3 +1,7 @@
+import Model.Car;
+import Model.Saab95;
+import Model.Volvo240;
+import Model.VolvoFH16;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
