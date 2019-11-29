@@ -9,7 +9,7 @@ import Model.Interfaces.IMovable;
 public abstract class Movable implements IMovable {
 
     protected double currentSpeed; // The current speed of the object
-    protected Direction currentDirection = Direction.NORTH; // Direction the object is facing
+    protected Direction currentDirection = Direction.EAST; // Direction the object is facing
     protected double x; // X position of object
     protected double y; // Y position of object
 

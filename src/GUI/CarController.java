@@ -1,15 +1,15 @@
 package GUI;
 
 import Model.Interfaces.IMovable;
-import Model.*;
+import Model.MotorizedVehicle;
+import Model.Saab95;
+import Model.Scania;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /*
 * This class represents the Controller part in the MVC pattern.
@@ -18,36 +18,18 @@ import java.util.Scanner;
  */
 
 public class CarController {
-    // member fields:
-
     // The delay (ms) corresponds to 20 updates a sec (hz)
     private final int delay = 50;
     // The timer is started with an listener (see below) that executes the statements
     // each step between delays.
-    private Timer timer = new Timer(delay, new TimerListener());
-
+    public Timer timer = new Timer(delay, new TimerListener());
     // The frame that represents this instance View of the MVC pattern
-    CarView frame;
+    public CarView frame;
     // A list of cars, modify if needed
-    ArrayList<MotorizedVehicle> cars = new ArrayList<>();
+    public ArrayList<MotorizedVehicle> vehicles;
 
-    //methods:
-
-    public static void main(String[] args) {
-        // Instance of this class
-        CarController cc = new CarController();
-
-        cc.cars.add(new Volvo240());
-        cc.cars.add(new Saab95());
-        cc.cars.get(1).setX(150);
-        cc.cars.add(new Scania());
-        cc.cars.get(2).setX(400);
-
-        // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
-
-        // Start the timer
-        cc.timer.start();
+    public CarController(ArrayList<MotorizedVehicle> vehicles) {
+        this.vehicles = vehicles;
     }
 
     /* Each step the TimerListener moves all the cars in the list and tells the
@@ -55,33 +37,20 @@ public class CarController {
     * */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            for (MotorizedVehicle vehicle : vehicles) {
+                VehicleGUI vehicleGUI = frame.drawPanel.vehicleGUIs.get(vehicles.indexOf(vehicle));
 
-            BufferedImage image;
-
-            for (MotorizedVehicle vehicle : cars) {
-
-                if(vehicle.getClass() == Volvo240.class) {
-                    image = frame.drawPanel.imageList.get(1);
-                } else if(vehicle.getClass() == Saab95.class) {
-                    image = frame.drawPanel.imageList.get(2);
-                } else if(vehicle.getClass() == Scania.class) {
-                    image = frame.drawPanel.imageList.get(3);
-                } else {
-                    image = frame.drawPanel.imageList.get(0);
-                }
-
-                frame.drawPanel.currentImage = image;
                 vehicle.move();
                 int x = (int) Math.round(vehicle.getX());
                 int y = (int) Math.round(vehicle.getY());
-                if(outOfPanel(vehicle, image, frame.drawPanel)) {
+                if(outOfPanel(vehicle, vehicleGUI.getImage(), frame.drawPanel)) {
                     vehicle.stopEngine();
                     invertDirection(vehicle);
                     vehicle.startEngine();
                 }
-                LockCoordinates(vehicle, frame.drawPanel.getWidth() - image.getWidth(),
-                        frame.drawPanel.getHeight() - image.getHeight());
-                frame.drawPanel.moveit(x, y);
+                LockCoordinates(vehicle, frame.drawPanel.getWidth() - vehicleGUI.getImage().getWidth(),
+                        frame.drawPanel.getHeight() - vehicleGUI.getImage().getHeight());
+                vehicleGUI.moveIt(x, y);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
             }
@@ -120,19 +89,68 @@ public class CarController {
         car.setX(Math.max(x, 0));
     }
 
+    // Calls the startEngine method for each car once
+    void startCars() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            vehicle.startEngine();
+        }
+    }
+
+    // Calls the stopEngine method for each car once
+    void stopCars() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            vehicle.stopEngine();
+        }
+    }
     // Calls the gas method for each car once
     void gas(int amount) {
         double gas = ((double) amount) / 100;
-        for (MotorizedVehicle car : cars) {
-            car.gas(gas);
+        for (MotorizedVehicle vehicle : vehicles) {
+            vehicle.gas(gas);
         }
     }
 
     // Calls the brake method for each car once
-    void  brake(int amount) {
+    void brake(int amount) {
         double brake = ((double) amount) / 100;
-        for (MotorizedVehicle car : cars) {
-            car.brake(brake);
+        for (MotorizedVehicle vehicle : vehicles) {
+            vehicle.brake(brake);
+        }
+    }
+
+    // Calls the setTurboOn method if vehicle is a Saab95
+    void turboOn() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            if (vehicle.getClass() == Saab95.class) {
+                ((Saab95) vehicle).setTurboOn();
+            }
+        }
+    }
+
+    // Calls the setTurboOn method if vehicle is a Saab95
+    void turboOff() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            if(vehicle.getClass() == Saab95.class) {
+                ((Saab95) vehicle).setTurboOff();
+            }
+        }
+    }
+
+    // Calls the raiseFlatbed method if vehicle is a Scania
+    void raiseBed() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            if(vehicle.getClass() == Scania.class) {
+                ((Scania) vehicle).raiseFlatbed();
+            }
+        }
+    }
+
+    // Calls the lowerFlatbed method if vehicle is a Scania
+    void lowerBed() {
+        for (MotorizedVehicle vehicle : vehicles) {
+            if(vehicle.getClass() == Scania.class) {
+                ((Scania) vehicle).lowerFlatbed();
+            }
         }
     }
 }

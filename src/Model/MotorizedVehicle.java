@@ -43,8 +43,10 @@ public abstract class MotorizedVehicle extends Movable implements ISizeable {
      * @param amount Amount the speed should be increased with
      */
     public void gas(double amount) {
-        amount = Math.max(amount, 0);
-        incrementSpeed(Math.min(amount, 1));
+        if(getCurrentSpeed() != 0) {
+            amount = Math.max(amount, 0);
+            incrementSpeed(Math.min(amount, 1));
+        }
     }
 
     /**

@@ -44,6 +44,13 @@ public class Scania extends Truck {
         }
     }
 
+    @Override
+    public void startEngine() {
+        if(flatbedHasNoAngle()) {
+            super.startEngine();
+        }
+    }
+
     public int getFlatbedAngle() {
         return flatbed.getFlatbedAngle();
     }
