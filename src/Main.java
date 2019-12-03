@@ -1,6 +1,5 @@
 import GUI.CarController;
 import GUI.CarView;
-import Model.Interfaces.IMovable;
 import Model.Saab95;
 import Model.Scania;
 import Model.Volvo240;

@@ -1,0 +1,207 @@
+@startuml
+
+title __MODEL's Class Diagram__\n
+
+abstract class Model.Car {
+    - loaded : boolean
+    + Car()
+    + isLoaded()
+    + setLoaded()
+}
+
+class Model.CarFerry {
+    + CarFerry()
+    + closeRamp()
+    + dropTransport()
+    + getLoadedTransport()
+    + isRampOpen()
+    + loadTransport()
+    + openRamp()
+}
+
+class Model.CarWorkshop {
+    - x : double
+    - y : double
+    + CarWorkshop()
+    + dropTransport()
+    + getLoadedTransport()
+    + getX()
+    + getY()
+    + loadTransport()
+    + setX()
+    + setY()
+}
+
+class Model.Flatbed {
+    - flatbedAngle : int
+    - maxFlatbedAngle : int
+    + Flatbed()
+    + flatbedHasNoAngle()
+    + getFlatbedAngle()
+    + getMaxFlatbedAngle()
+    + lowerFlatbed()
+    + raiseFlatbed()
+    + setFlatbedAngle()
+}
+
+abstract class Model.MotorizedVehicle {
+    - color : Color
+    - enginePower : double
+    - heightMeter : double
+    - lengthMeter : double
+    - modelName : String
+    - nrDoors : int
+    - widthMeter : double
+    + MotorizedVehicle()
+    + brake()
+    + gas()
+    + getColor()
+    + getEnginePower()
+    + getHeight()
+    + getLength()
+    + getModelName()
+    + getNrDoors()
+    + getWidth()
+    + isMoving()
+    + setColor()
+    + setCurrentSpeed()
+    + setHeight()
+    + setLength()
+    + setWidth()
+    + startEngine()
+    + stopEngine()
+    # speedFactor()
+    - decrementSpeed()
+    - incrementSpeed()
+}
+
+abstract class Model.Movable {
+    # currentSpeed : double
+    # x : double
+    # y : double
+    + getCurrentDirection()
+    + getCurrentSpeed()
+    + getX()
+    + getY()
+    + move()
+    + setCurrentDirection()
+    + setCurrentSpeed()
+    + setX()
+    + setY()
+    + turnLeft()
+    + turnRight()
+    - invertDirection()
+}
+
+class Model.Ramp {
+    - rampOpen : boolean
+    + closeRamp()
+    + isRampOpen()
+    + openRamp()
+    + setRampOpen()
+}
+
+class Model.Saab95 {
+    - turboOn : boolean
+    + Saab95()
+    + setTurboOff()
+    + setTurboOn()
+    # speedFactor()
+}
+
+class Model.Scania {
+    + Scania()
+    + flatbedHasNoAngle()
+    + gas()
+    + getFlatbedAngle()
+    + getMaxFlatbedAngle()
+    + lowerFlatbed()
+    + raiseFlatbed()
+    + setCurrentSpeed()
+    + setFlatbedAngle()
+    + startEngine()
+}
+
+class Model.TransportableHolder {
+    # loadedTransport : Deque<T>
+    - loadAndDropDistanceMeter : double
+    - maxLoad : int
+    - maxTransportHeightMeter : double
+    - maxTransportLengthMeter : double
+    - maxTransportWidthMeter : double
+    - x : double
+    - y : double
+    + TransportableHolder()
+    + dropTransport()
+    + getLoadAndDropDistanceMeter()
+    + getLoadedTransport()
+    + getMaxLoad()
+    + getMaxTransportHeightMeter()
+    + getMaxTransportLengthMeter()
+    + getMaxTransportWidthMeter()
+    + getX()
+    + getY()
+    + loadTransport()
+    + setX()
+    + setY()
+    + updatePosition()
+    # isTransportDroppable()
+    # isTransportLoadable()
+    # transportCloseEnough()
+    # transportTooBig()
+}
+
+abstract class Model.Truck {
+    + Truck()
+}
+
+class Model.Volvo240 {
+    {static} - trimFactor : double
+    + Volvo240()
+    # speedFactor()
+}
+
+class Model.VolvoFH16 {
+    + VolvoFH16()
+    + closeRamp()
+    + dropTransport()
+    + gas()
+    + getLoadedTransport()
+    + getMaxLoad()
+    + isRampOpen()
+    + loadTransport()
+    + move()
+    + openRamp()
+    + setCurrentSpeed()
+}
+
+  
+
+  Model.Car .up.|> Model.Interfaces.ITransportable
+  Model.Car -up-|> Model.MotorizedVehicle
+  Model.CarFerry .up.|> Model.Interfaces.ITransportableHolder
+  Model.CarFerry -up-|> Model.MotorizedVehicle
+  Model.CarFerry o-- Model.Ramp : ramp
+  Model.CarFerry o-- Model.TransportableHolder : transportableHolder
+  Model.CarWorkshop .up.|> Model.Interfaces.IPositionable
+  Model.CarWorkshop .up.|> Model.Interfaces.ITransportableHolder
+  Model.CarWorkshop o-- Model.TransportableHolder : transportableHolder
+  Model.Flatbed .up.|> Model.Interfaces.IFlatbed
+  Model.MotorizedVehicle .up.|> Model.Interfaces.ISizeable
+  Model.MotorizedVehicle -up-|> Model.Movable
+  Model.Movable .up.|> Model.Interfaces.IMovable
+  Model.Movable o-- Model.Interfaces.IMovable.Direction : currentDirection
+  Model.Ramp .up.|> Model.Interfaces.IRamp
+  Model.Saab95 -up-|> Model.Car
+  Model.Scania -up-|> Model.Truck
+  Model.Scania o-- Model.Flatbed : flatbed
+  Model.TransportableHolder .up.|> Model.Interfaces.IPositionable
+  Model.TransportableHolder .up.|> Model.Interfaces.ITransportableHolder
+  Model.Truck -up-|> Model.MotorizedVehicle
+  Model.Volvo240 -up-|> Model.Car
+  Model.VolvoFH16 .up.|> Model.Interfaces.ITransportableHolder
+  Model.VolvoFH16 -up-|> Model.Truck
+  Model.VolvoFH16 o-- Model.Ramp : ramp
+  Model.VolvoFH16 o-- Model.TransportableHolder : transportableHolder
+
+@enduml

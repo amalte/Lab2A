@@ -2,71 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a53155-a816-4e78-a8f4-a6f56ba08ad0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Lab2A (sam).plantuml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/Test.plantuml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/GUI.plantuml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/VehicleGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Interfaces/Interfaces.plantuml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Model.plantuml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Car$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Lab1del1PM.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Lab1del2PM.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/META-INF/Lab1.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Movable$Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Movable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Saab95.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Volvo240.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/CarFerry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/CarWorkshop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Flatbed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IFlatbed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IMovable$Direction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IMovable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IPositionable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/IRamp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ISizeable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ITransportable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ITransportableHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Interfaces/ITransporter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/META-INF/Lab1B.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/MotorizedVehicle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Movable$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Movable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Ramp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Saab95.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Scania.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/TransportableHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Transporter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Truck.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/Volvo240.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1B/VolvoFH16.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarController$TimerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarController$TimerListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarView$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarView$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/GUI/CarView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/GUI/DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/GUI/DrawPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/Model/MotorizedVehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/Model/MotorizedVehicle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/Model/Movable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/Model/Movable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab2A/Model/Scania.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab2A/Model/Scania.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1/MovableTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/CarWorkshopTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/MotorizedVehicleTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/ScaniaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1B/VolvoFH16Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DrawPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/MotorizedVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MotorizedVehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Scania.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Scania.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lab2A (sam).plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2A (sam).plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Model.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.plantuml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

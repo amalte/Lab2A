@@ -1,0 +1,73 @@
+@startuml
+
+title __LAB2A's Class Diagram__\n
+
+class Main
+
+
+
+class GUI.CarController
+class GUI.CarView
+class GUI.DrawPanel
+class GUI.VehicleGUI
+
+
+
+interface Model.Interfaces.IFlatbed
+interface Model.Interfaces.IMovable
+interface Model.Interfaces.IPositionable
+interface Model.Interfaces.IRamp
+interface Model.Interfaces.ISizeable
+interface Model.Interfaces.ITransportable
+interface Model.Interfaces.ITransportableHolder
+
+abstract class Model.Car
+class Model.CarFerry
+class Model.CarWorkshop
+class Model.Flatbed
+abstract class Model.MotorizedVehicle
+abstract class Model.Movable
+class Model.Ramp
+class Model.Saab95
+class Model.Scania
+class Model.TransportableHolder
+abstract class Model.Truck
+class Model.Volvo240
+class Model.VolvoFH16
+
+
+
+GUI.CarController o-- GUI.CarView : frame
+GUI.CarView -up-|> javax.swing.JFrame
+GUI.CarView o-- GUI.CarController : carC
+GUI.CarView o-- GUI.DrawPanel : drawPanel
+GUI.DrawPanel -up-|> javax.swing.JPanel
+GUI.VehicleGUI o-- Model.MotorizedVehicle : vehicle
+Model.Car .up.|> Model.Interfaces.ITransportable
+Model.Car -up-|> Model.MotorizedVehicle
+Model.CarFerry .up.|> Model.Interfaces.ITransportableHolder
+Model.CarFerry -up-|> Model.MotorizedVehicle
+Model.CarFerry o-- Model.Ramp : ramp
+Model.CarFerry o-- Model.TransportableHolder : transportableHolder
+Model.CarWorkshop .up.|> Model.Interfaces.IPositionable
+Model.CarWorkshop .up.|> Model.Interfaces.ITransportableHolder
+Model.CarWorkshop o-- Model.TransportableHolder : transportableHolder
+Model.Flatbed .up.|> Model.Interfaces.IFlatbed
+Model.MotorizedVehicle .up.|> Model.Interfaces.ISizeable
+Model.MotorizedVehicle -up-|> Model.Movable
+Model.Movable .up.|> Model.Interfaces.IMovable
+Model.Movable o-- Model.Interfaces.IMovable.Direction : currentDirection
+Model.Ramp .up.|> Model.Interfaces.IRamp
+Model.Saab95 -up-|> Model.Car
+Model.Scania -up-|> Model.Truck
+Model.Scania o-- Model.Flatbed : flatbed
+Model.TransportableHolder .up.|> Model.Interfaces.IPositionable
+Model.TransportableHolder .up.|> Model.Interfaces.ITransportableHolder
+Model.Truck -up-|> Model.MotorizedVehicle
+Model.Volvo240 -up-|> Model.Car
+Model.VolvoFH16 .up.|> Model.Interfaces.ITransportableHolder
+Model.VolvoFH16 -up-|> Model.Truck
+Model.VolvoFH16 o-- Model.Ramp : ramp
+Model.VolvoFH16 o-- Model.TransportableHolder : transportableHolder
+
+@enduml
