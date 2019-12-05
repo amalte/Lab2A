@@ -50,8 +50,9 @@ public class ScaniaTest {
         assertEquals(0, scania.getCurrentSpeed(), 0.0001);
 
         scania.setFlatbedAngle(0);
+        scania.startEngine();
         scania.gas(1);
-        assertEquals(1, scania.getCurrentSpeed(), 0.0001);
+        assertEquals(1.1, scania.getCurrentSpeed(), 0.0001);
 
     }
 

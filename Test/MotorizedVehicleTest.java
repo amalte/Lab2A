@@ -60,7 +60,7 @@ public class MotorizedVehicleTest {
         volvo.setCurrentDirection(IMovable.Direction.NORTH);
         volvo.setCurrentSpeed(5);
         volvo.move();
-        assertEquals(5, volvo.getY(), 0.001);
+        assertEquals(-5, volvo.getY(), 0.001);
 
         saab.setCurrentDirection(IMovable.Direction.EAST);
         saab.setCurrentSpeed(5);
@@ -75,16 +75,19 @@ public class MotorizedVehicleTest {
         assertEquals(100, volvo.getCurrentSpeed(), 0.0001);
 
         volvo.setCurrentSpeed(0);
+        volvo.startEngine();
         volvo.gas(2);
-        assertEquals(1.25, volvo.getCurrentSpeed(), 0.0001);
+        assertEquals(1.35, volvo.getCurrentSpeed(), 0.0001);
 
+        saab.startEngine();
         saab.setCurrentSpeed(50);
         saab.gas(1);
         assertEquals(51.25, saab.getCurrentSpeed(), 0.0001);
 
         saab.setCurrentSpeed(-50);
+        saab.startEngine();
         saab.gas(1);
-        assertEquals(1.25, saab.getCurrentSpeed(), 0.0001);
+        assertEquals(1.35, saab.getCurrentSpeed(), 0.0001);
 
         saab.setTurboOn();
         saab.setCurrentSpeed(50);

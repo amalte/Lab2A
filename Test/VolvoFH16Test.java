@@ -89,8 +89,9 @@ public class VolvoFH16Test {
     @Test
     public void gas() {
         resetTruck();
+        truckTransporter.startEngine();
         truckTransporter.gas(1);
-        assertEquals(1, truckTransporter.getCurrentSpeed());
+        assertEquals(1.1, truckTransporter.getCurrentSpeed());
 
         resetTruck();
         truckTransporter.openRamp();
