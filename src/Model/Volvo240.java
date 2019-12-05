@@ -4,7 +4,7 @@ import java.awt.*;
 
 /**
  * @author SM
- * Subclass of Model.Car. Represents a car of model Model.Volvo240
+ * Subclass of Model.Car. Represents a car of model Volvo240
  */
 public class Volvo240 extends Car {
 
@@ -14,7 +14,7 @@ public class Volvo240 extends Car {
      * Constructor for Model.Volvo240 class
      */
     public Volvo240(){
-        super(4, 100, Color.black, "Model.Volvo240", 1.8, 1.4, 4.5);
+        super(4, 100, Color.black, "Volvo240", 1.8, 1.4, 4.5);
     }
 
     /**

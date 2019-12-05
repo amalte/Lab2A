@@ -11,7 +11,7 @@ import java.util.Deque;
  * @author SM
  * Represents a Model.TransportableHolder object (an object that can hold objects)
  */
-public class TransportableHolder<T extends ITransportable> implements ITransportableHolder<T>, IPositionable {
+public class TransportableHolder<T extends ITransportable> implements ITransportableHolder<T> {
 
     private final int maxLoad; // Max amount of object that can be loaded
     private final double maxTransportWidthMeter; // Max width in meters of object to be transported

@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a53155-a816-4e78-a8f4-a6f56ba08ad0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/UML/Interfaces.plantuml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UML/Lab2A - NEW.plantuml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2A (sam).plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2A (sam).plantuml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.plantuml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Model.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/Lab2A.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/Lab2A.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/Model.plantuml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/Model.plantuml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/PNG/Full Class Diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/UML/PNG/Full Class Diagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/PNG/Model Class Diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/UML/PNG/Model Class Diagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/CarWorkshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/CarWorkshop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Flatbed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Flatbed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Interfaces/IFlatbed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Interfaces/IRamp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Interfaces/ITransportableHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Interfaces/ITransportableHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Interfaces/Interfaces.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Ramp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Ramp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Saab95.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/TransportableHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TransportableHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Volvo240.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +61,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="findjar.last.used.dir" value="$PROJECT_DIR$" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../TDA548 - Grundläggande programvaruutveckling/neighbours" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/UML" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -61,7 +73,11 @@
       <recent name="Interfaces" />
       <recent name="" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Chalmers\TDA552 - Objektorienterad programmering och design\Labbar\_Git\Lab2A (sam)\UML" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Chalmers\TDA552 - Objektorienterad programmering och design\Labbar\_Git\Lab2A (sam)\UML" />
       <recent name="D:\Chalmers\TDA552 - Objektorienterad programmering och design\Labbar\_Git\Lab1B (sam)" />
     </key>
   </component>

@@ -5,7 +5,7 @@ import java.util.Deque;
  * @author SM
  * Interface for objects that have a Model.TransportableHolder
  */
-public interface ITransportableHolder<T extends ITransportable> {
+public interface ITransportableHolder<T extends ITransportable> extends IPositionable {
     /**
      * Loads given object onto the Model.TransportableHolder
      * @param transport The object to be loaded

@@ -1,12 +1,10 @@
 package Model;
 
-import Model.Interfaces.IFlatbed;
-
 /**
  * @author SM
  * Represents a Model.Flatbed object
  */
-public class Flatbed implements IFlatbed {
+public class Flatbed {
 
     private int flatbedAngle; // Angle of flatbed
     private final int maxFlatbedAngle; // Max angle of flatbed
@@ -19,37 +17,31 @@ public class Flatbed implements IFlatbed {
         this.maxFlatbedAngle = maxFlatbedAngle;
     }
 
-    @Override
     public void lowerFlatbed() {
         int angle = flatbedAngle - 1;
         angle = Math.min(angle, maxFlatbedAngle);
         flatbedAngle = Math.max(angle, 0);
     }
 
-    @Override
     public void raiseFlatbed() {
         int angle = flatbedAngle + 1;
         angle = Math.min(angle, maxFlatbedAngle);
         flatbedAngle = Math.max(angle, 0);
     }
 
-    @Override
     public boolean flatbedHasNoAngle() {
         return flatbedAngle == 0;
     }
 
-    @Override
     public int getFlatbedAngle() {
         return flatbedAngle;
     }
 
-    @Override
     public void setFlatbedAngle(int angle) {
         angle = Math.min(angle, maxFlatbedAngle);
         flatbedAngle = Math.max(angle, 0);
     }
 
-    @Override
     public int getMaxFlatbedAngle() {
         return maxFlatbedAngle;
     }

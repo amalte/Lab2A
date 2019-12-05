@@ -37,17 +37,16 @@ class Model.VolvoFH16
 
 GUI.CarController o-- GUI.CarView : frame
 GUI.CarView -up-|> javax.swing.JFrame
-GUI.CarView o-- GUI.CarController : carC
+GUI.DrawPanel o--|> GUI.VehicleGUI
 GUI.CarView o-- GUI.DrawPanel : drawPanel
 GUI.DrawPanel -up-|> javax.swing.JPanel
-GUI.VehicleGUI o-- Model.MotorizedVehicle : vehicle
+GUI.VehicleGUI -up- Model.MotorizedVehicle : vehicle
 Model.Car .up.|> Model.Interfaces.ITransportable
 Model.Car -up-|> Model.MotorizedVehicle
 Model.CarFerry .up.|> Model.Interfaces.ITransportableHolder
 Model.CarFerry -up-|> Model.MotorizedVehicle
 Model.CarFerry o-- Model.Ramp : ramp
 Model.CarFerry o-- Model.TransportableHolder : transportableHolder
-Model.CarWorkshop .up.|> Model.Interfaces.IPositionable
 Model.CarWorkshop .up.|> Model.Interfaces.ITransportableHolder
 Model.CarWorkshop o-- Model.TransportableHolder : transportableHolder
 Model.MotorizedVehicle .up.|> Model.Interfaces.ISizeable
@@ -57,7 +56,6 @@ Model.Movable o-- Model.Interfaces.IMovable.Direction : currentDirection
 Model.Saab95 -up-|> Model.Car
 Model.Scania -up-|> Model.Truck
 Model.Scania o-- Model.Flatbed : flatbed
-Model.TransportableHolder .up.|> Model.Interfaces.IPositionable
 Model.TransportableHolder .up.|> Model.Interfaces.ITransportableHolder
 Model.Truck -up-|> Model.MotorizedVehicle
 Model.Volvo240 -up-|> Model.Car
@@ -68,5 +66,5 @@ Model.VolvoFH16 o-- Model.TransportableHolder : transportableHolder
 Model.Interfaces.IMovable -up-|> Model.Interfaces.IPositionable
 Model.Interfaces.ITransportable -up-|> Model.Interfaces.ISizeable
 Model.Interfaces.ITransportable -up-|> Model.Interfaces.IPositionable
-
+Model.Interfaces.ITransportableHolder -up-|> Model.Interfaces.IPositionable
 @enduml

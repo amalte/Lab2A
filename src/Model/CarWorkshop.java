@@ -9,7 +9,7 @@ import java.util.Deque;
  * @author SM
  * Class for workshops that only take in Model.Car objects
  */
-public class CarWorkshop<T extends Car> implements ITransportableHolder<T>, IPositionable {
+public class CarWorkshop<T extends Car> implements ITransportableHolder<T> {
 
     TransportableHolder transportableHolder;
     private double x;

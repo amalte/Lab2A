@@ -186,12 +186,10 @@ class Model.VolvoFH16 {
   Model.CarWorkshop .up.|> Model.Interfaces.IPositionable
   Model.CarWorkshop .up.|> Model.Interfaces.ITransportableHolder
   Model.CarWorkshop o-- Model.TransportableHolder : transportableHolder
-  Model.Flatbed .up.|> Model.Interfaces.IFlatbed
   Model.MotorizedVehicle .up.|> Model.Interfaces.ISizeable
   Model.MotorizedVehicle -up-|> Model.Movable
   Model.Movable .up.|> Model.Interfaces.IMovable
   Model.Movable o-- Model.Interfaces.IMovable.Direction : currentDirection
-  Model.Ramp .up.|> Model.Interfaces.IRamp
   Model.Saab95 -up-|> Model.Car
   Model.Scania -up-|> Model.Truck
   Model.Scania o-- Model.Flatbed : flatbed

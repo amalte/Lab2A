@@ -1,0 +1,50 @@
+@startuml
+
+title __INTERFACES's Class Diagram__\n
+
+interface Model.Interfaces.IMovable {
+    Direction
+    {abstract} + move()
+    {abstract} + turnLeft()
+    {abstract} + turnRight()
+}
+
+enum Direction {
+    EAST
+    NORTH
+    SOUTH
+    WEST
+}
+
+interface Model.Interfaces.IPositionable {
+    {abstract} + getX()
+    {abstract} + getY()
+    {abstract} + setX()
+    {abstract} + setY()
+}
+
+interface Model.Interfaces.ISizeable {
+    {abstract} + getHeight()
+    {abstract} + getLength()
+    {abstract} + getWidth()
+    {abstract} + setHeight()
+    {abstract} + setLength()
+    {abstract} + setWidth()
+}
+
+interface Model.Interfaces.ITransportable {
+    {abstract} + isLoaded()
+    {abstract} + setLoaded()
+}
+
+interface Model.Interfaces.ITransportableHolder {
+    {abstract} + dropTransport()
+    {abstract} + getLoadedTransport()
+    {abstract} + loadTransport()
+}
+
+
+
+Model.Interfaces.IMovable +-down- Model.Interfaces.IMovable.Direction
+
+@enduml
