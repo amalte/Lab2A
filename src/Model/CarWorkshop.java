@@ -1,8 +1,8 @@
 package Model;
 
-import Model.Interfaces.IPositionable;
 import Model.Interfaces.ITransportable;
 import Model.Interfaces.ITransportableHolder;
+
 import java.util.Deque;
 
 /**

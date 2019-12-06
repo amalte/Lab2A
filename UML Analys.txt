@@ -26,7 +26,10 @@ Endast för utökning.
 På vilka klasser skulle ni behöva tillämpa dekomposition för att bättre följa SoC och SRP? :
 Tillämpa MVC för CarController, CarView och Model packaged
 
-UPPGIFT 4: UML
-Ta bort "Has-A" CarController från CarView.
-Flytta ActionListeners till CarController.
-Koppla ett "Has-A" VehicleGUI till DrawPanel.
+UPPGIFT 4: NY DESIGN
+Ta bort "Has-A" CarController från CarView (
+Flytta ActionListeners till CarController (Controller ska sköta användarinput).
+Skapa en metod i CarController som lägger till en MotoriziedVehicle i vehicle och vehicleGUI listan (istället för att mata in dem direkt i konstruktorn) för att motverka inflexibilitet.
+Skapa en metod i CarController som tar emot en view och tillämpar controllerns funktionalitet på viewen (flera views kan tillägas)
+Ta bort MotoriziedVehicle (Volvo240, Saab95, Scania) beroenderna som finns i VehicleGUI genom att använda getModelName.
+Flytta timern från CarController till Main.
